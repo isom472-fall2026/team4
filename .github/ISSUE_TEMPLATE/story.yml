@@ -7,7 +7,7 @@ body:
       value: |
         One story is one thing a user can do. If you need the word "and" twice, it is two stories.
 
-        GitHub gives this issue a number when you submit it. **That number is the story number** — use it in your branch name and your commit messages. Do not invent your own.
+        GitHub gives this issue a number when you submit it. **The story number is `S-` plus that number** — issue #14 is story S-14. Use it in your branch name and your commit messages. Do not invent your own.
   - type: textarea
     id: story
     attributes:

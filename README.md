@@ -84,17 +84,17 @@ your running system later in the course.
 
 The short version. The full version is [docs/how-we-work.md](docs/how-we-work.md).
 
-- One branch per story, named after its issue number: `14-duplicate-orders`.
+- One branch per story, named after its story number: `s-14-duplicate-orders`.
 - Nobody merges their own work. A teammate reads it and says what they checked.
 - The Client Lead accepts.
 - Every pull request declares AI use.
 - Every student commits under their own account.
 
-The issue number **is** the story number. Commit messages carry a type, a scope, what
-changed, and that number:
+The story number is `S-` plus the issue number — issue #14 is story S-14. Commit messages
+carry a type, a scope, what changed, and that number:
 
 ```
-feat(orders): add duplicate-order check  [#14]
+feat(orders): add duplicate-order check  [S-14]
 ```
 
 Phase tags are `phase-1` … `phase-6`. **The tag is what gets graded.** The Phase Lead

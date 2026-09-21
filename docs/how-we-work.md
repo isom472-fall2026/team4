@@ -28,8 +28,8 @@ Two more you will meet:
 
 ## Story numbers
 
-GitHub numbers every issue for you. **That number is the story number.** Issue #14 is
-story 14, its branch is `14-duplicate-orders`, and its commits end in `[#14]`.
+GitHub numbers every issue for you. **The story number is `S-` plus that number.** Issue #14
+is story S-14, its branch is `s-14-duplicate-orders`, and its commits end in `[S-14]`.
 
 Do not invent your own numbering. Two people will pick the same one.
 
@@ -41,10 +41,10 @@ have done it twice.
 1. **Pick a story** from the board. Assign the issue to yourself, so nobody picks it twice.
 2. **Read its acceptance criteria.** If you cannot tell when it is finished, it is not
    ready to build. Ask the Client Lead before you write anything.
-3. **Make a branch** named after the story: `14-duplicate-orders`.
+3. **Make a branch** named after the story: `s-14-duplicate-orders`.
 4. **Build it.** Use your AI assistant as much as you like. You still own what it writes.
 5. **Commit as you go**, with the issue number in the message:
-   `feat(orders): add duplicate-order check  [#14]`
+   `feat(orders): add duplicate-order check  [S-14]`
 6. **Open a pull request.** The template appears by itself. Fill in all of it, including
    the AI-Assisted line.
 7. **Ask a teammate to review it.** They open **Files changed → Review changes**, write
