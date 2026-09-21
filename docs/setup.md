@@ -65,15 +65,17 @@ the repository, not something you broke.
 
 ## 6. Supabase
 
-Your data and your logins live in Supabase. **The Data Lead does this once for the team.**
+Your data and your logins live in Supabase. **The team creates one shared account, not one
+each.** The Data Lead sets it up.
 
-1. Create a free account at [supabase.com](https://supabase.com). No payment card.
-2. **New project.** Name it after your team. Choose the region closest to Kuwait that the
-   free plan offers, and keep the database password somewhere your team can find it — it is
-   shown once.
-3. Invite your teammates: **Organization settings → Team → Invite**. If the free plan will
-   not take everyone, the Data Lead stays the only account holder; the rest of you build
-   against the keys below, which is enough.
+1. Agree whose email address the account uses. That inbox receives the sign-in codes, so
+   everyone depends on that person being reachable — and every member must be able to sign
+   in to it.
+2. Create the account at [supabase.com](https://supabase.com). It is free, it works in
+   Kuwait, and it does not ask for a card.
+3. **New project.** Name it after your team. Choose the region closest to Kuwait that the
+   free plan offers, and keep the database password where your team can find it — it is
+   shown once and never again.
 4. **Settings → API.** You need two values: the **Project URL** and the **anon public key**.
 
 ### Where the keys go
