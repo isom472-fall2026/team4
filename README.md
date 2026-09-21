@@ -17,7 +17,7 @@ never met your client should understand what it is for after reading these two l
 
 | I need to… | Go to |
 |---|---|
-| set up my laptop — week 1, do this first | [docs/setup.md](docs/setup.md) |
+| set up my laptop, the page and Supabase — do this first | [docs/setup.md](docs/setup.md) |
 | know how we work — branches, reviews, the rules | [docs/how-we-work.md](docs/how-we-work.md) |
 | write something the system must do | Issues tab → **New issue** → *User story* |
 | report something broken | Issues tab → **New issue** → *Bug* |
@@ -65,7 +65,7 @@ cuts the tag.
 | `AGENTS.md` | The same working rules, written for your AI assistant. |
 | `.gitignore` | What must never reach this public repository. |
 | `.github/` | The templates for pull requests and issues. |
-| `docs/setup.md` | Setting up your laptop and your GitHub identity. Week 1. |
+| `docs/setup.md` | Your laptop, your GitHub identity, your public page, Supabase. |
 | `docs/how-we-work.md` | How the team works. Read this once, in week 2. |
 | `docs/team-agreement.md` | What each member committed to. Signed in Phase 1. |
 | `docs/personas.md` | The two to four people who will use the system. |
