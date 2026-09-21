@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: How we work
+    url: https://github.com/isom472-fall2026/isom472-team-template/blob/main/docs/how-we-work.md
+    about: The loop, the rules, and what to do when you are stuck.

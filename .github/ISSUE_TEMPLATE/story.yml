@@ -1,0 +1,56 @@
+name: User story
+description: One thing a user can do with the system.
+labels: ["story"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        One story is one thing a user can do. If you need the word "and" twice, it is two stories.
+
+        GitHub gives this issue a number when you submit it. **That number is the story number** — use it in your branch name and your commit messages. Do not invent your own.
+  - type: textarea
+    id: story
+    attributes:
+      label: The story
+      description: Three lines. Keep the shape.
+      value: |
+        As a
+        I want
+        So that
+    validations:
+      required: true
+  - type: textarea
+    id: criteria
+    attributes:
+      label: Acceptance criteria
+      description: How anyone can tell it is done. Each one must be checkable by a teammate doing it. "Works well" is not a criterion.
+      value: |
+        - [ ]
+        - [ ]
+        - [ ]
+    validations:
+      required: true
+  - type: input
+    id: owner
+    attributes:
+      label: Who is building this
+      description: One name. Assign the issue to them as well.
+    validations:
+      required: true
+  - type: dropdown
+    id: phase
+    attributes:
+      label: Phase
+      options:
+        - "Phase 2 — design sprint"
+        - "Phase 3 — sprint 1"
+        - "Phase 4 — sprint 2"
+        - "Phase 5 — sprint 3"
+        - "Phase 6 — final sprint"
+    validations:
+      required: true
+  - type: input
+    id: data
+    attributes:
+      label: Tables it reads or writes (optional)
+      description: If this story touches the database, name the tables. If the schema needs to change for it, say so here before you start.

@@ -1,0 +1,33 @@
+# macOS
+.DS_Store
+
+# THIS REPOSITORY IS PUBLIC. Anything below must never be committed — not once, not
+# "temporarily". A secret pushed here is a secret published, and deleting it later does
+# not unpublish it. No passwords, no API keys, no Supabase service keys, no client
+# personal data. Seed data is invented.
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+serviceaccount.json
+secrets.yml
+secrets.yaml
+
+# Dependencies and build output
+node_modules/
+dist/
+build/
+.next/
+__pycache__/
+*.pyc
+
+# Editor and tooling cruft
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+Thumbs.db

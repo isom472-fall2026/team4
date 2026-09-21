@@ -1,0 +1,43 @@
+name: Bug
+description: Something in the running system does not work.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The Quality Lead owns these.
+
+        **When you close a bug, add one label to say how it ended: `fixed`, `wontfix` or `not-a-bug`.** A bug closed with no label is not counted.
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Numbered. Someone else must be able to follow them and see the same thing.
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: input
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: input
+    id: actual
+    attributes:
+      label: What happened instead
+    validations:
+      required: true
+  - type: input
+    id: where
+    attributes:
+      label: Where you saw it
+      description: The page or screen, and the browser you used.
+  - type: input
+    id: story
+    attributes:
+      label: Related story number (optional)
+      description: For example, #14.
