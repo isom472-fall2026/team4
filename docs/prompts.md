@@ -7,6 +7,84 @@ acceptance criteria will beat any clever wording.
 
 ---
 
+## Signing the team agreement
+
+Done in class, in week 2. Everyone signs `docs/team-agreement.md` **twice**: once by hand,
+once through Antigravity. Both signatures are commits from your own account, and the second
+one is the proof that Antigravity works on your laptop.
+
+Everything happens on one branch. The Phase 1 Lead makes it first:
+`<issue-number>-sign-the-team-agreement`.
+
+### Way 1 — by hand
+
+1. On the branch, open `docs/team-agreement.md`. On github.com use the pencil icon; on your
+   laptop use GitHub Desktop and Antigravity's editor.
+2. Fill in your own row — name, standing role, hours, how to reach you — and type your name
+   in **Signed — by hand**. Touch nobody else's row.
+3. Commit it, on the branch, with your own account:
+   `docs(agreement): sign for <your name>  [#<issue-number>]`
+4. Push. Your name and avatar appear beside the commit. If the avatar is grey, your git
+   identity is wrong — fix it with the two lines in `docs/setup.md` and commit again.
+
+### Way 2 — through Antigravity
+
+**Step 1 — the Phase 1 Lead opens the issue.** One issue per team, and it is what the
+signing closes:
+
+```
+Open a GitHub issue in this repository titled:
+Everyone signs the team agreement, and Antigravity works on every laptop
+
+In the body, put a checklist with one line per team member, naming each member, and a
+line saying the issue closes when docs/team-agreement.md has both signature columns
+filled for every member on the branch <issue-number>-sign-the-team-agreement.
+
+Do not edit any file and do not open a pull request.
+```
+
+**Step 2 — each member signs again, with Antigravity.** Run this on your own laptop, in
+your own clone. It is the check: if Antigravity cannot do it, say so in class today.
+
+```
+In this repository, on the branch <issue-number>-sign-the-team-agreement, open
+docs/team-agreement.md.
+
+Find the row whose name is <your name>. Write my GitHub handle <your-handle> and today's
+date in the last column, "Signed again — through Antigravity". Change nothing else, and
+do not touch any other row.
+
+Then commit that one file with the message:
+docs(agreement): confirm Antigravity for <your name>  [#<issue-number>]
+
+Do not push, and do not open a pull request. I will do both myself.
+```
+
+Push it yourself, from GitHub Desktop or Antigravity's source-control panel. The commit
+carries your name because it was made in your clone under your git identity — that is what
+makes it a signature rather than a line of text.
+
+**Step 3 — the Phase 1 Lead checks the table and closes the issue.**
+
+```
+Read docs/team-agreement.md on the branch <issue-number>-sign-the-team-agreement, and
+read the commits on that branch.
+
+For every member of the team, say whether both signature columns are filled, and whether
+each signature was committed by that member's own GitHub account. Name anyone who is
+missing either one.
+
+If every member has both, comment on issue #<issue-number> with what you checked, one
+line per member, and close the issue. If anyone is missing, comment with who is missing
+what and leave the issue open.
+```
+
+The pull request is still yours. The Phase 1 Lead opens it; a teammate who did not open it
+reviews it and merges. Antigravity does not push, open, approve or merge anything — that
+rule is in `AGENTS.md` and it holds today too.
+
+---
+
 ## Turn the proposal into stories
 
 ```

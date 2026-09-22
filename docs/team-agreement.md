@@ -1,7 +1,13 @@
 # Team agreement
 
-Every member fills in their own line and types their name in the last column. The Phase 1
-Lead commits it. It is part of Phase 1.
+Every member fills in their own line and signs it **twice**: once by hand, and once through
+Antigravity. Both signatures are commits made from your own GitHub account, in class, on the
+branch the Phase 1 Lead opens. The second one is how the course checks that Antigravity is
+working on your laptop — a signature Antigravity could not write is a laptop we fix today,
+not in week 6.
+
+Steps for both signatures, and the three prompts, are in
+[prompts.md](prompts.md#signing-the-team-agreement). It is part of Phase 1.
 
 This is not a formality. Most teams that struggle in this course struggle over the same
 three things, and all three are easier to settle now, while everyone is still friendly,
@@ -9,14 +15,19 @@ than in week 10.
 
 ## What each of us commits to
 
-| Name | Standing role | Hours per week I can give | How to reach me fastest | Signed (type your name) |
-|---|---|---|---|---|
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
+| Name | Standing role | Hours per week I can give | How to reach me fastest | Signed — by hand | Signed again — through Antigravity |
+|---|---|---|---|---|---|
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|  |  |  |  |  |  |
+
+Type your own name in the fifth column, in your own commit. Have Antigravity write your
+GitHub handle and today's date in the sixth, in a second commit. Nobody signs for anybody
+else: a row signed by a teammate is not a signature, and the commit history shows which it
+was.
 
 ## How we work together
 
@@ -44,4 +55,5 @@ last two, which are the course's rules and are not yours to change.
 | A story is too big to finish this sprint | Split it, or move it. Say so on the board before the sprint ends. |
 | The client changes their mind | The Client Lead writes it as a new story. The old work is not deleted quietly. |
 
-Signed by the whole team in Phase 1.
+Signed by the whole team in Phase 1 — both columns, every row, each from that member's own
+account.

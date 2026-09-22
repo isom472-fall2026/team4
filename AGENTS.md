@@ -52,11 +52,13 @@ Prefer the smallest change that satisfies the acceptance criteria.
 
 ## What you may and may not do with git
 
-- **You may:** create a branch, edit files, commit.
+- **You may:** create a branch, edit files, commit. You may also open an issue, comment on
+  one, and close one when a student asks you to.
 - **You may not:** push, merge, open a pull request, approve one, create a tag, force push,
   amend a pull request that is already open, or change history.
 
-Those are the student's acts, and the record of who did them is what gets graded.
+Those are the student's acts, and the record of who did them is what gets graded. An issue
+is not one of them: it is the board, and keeping it current is work the student can hand you.
 
 Commit messages use Conventional Commits with the story number at the end. The story
 number is the issue number:
