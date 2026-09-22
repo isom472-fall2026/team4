@@ -6,7 +6,7 @@
 
 Closes #__
 
-<!-- The issue number. Writing "Closes S-14" does nothing; "Closes #14" closes issue 14
+<!-- The issue number. Writing "Closes 14" does nothing; "Closes #14" closes issue 14
      when this is merged. For work with no issue — the proposal, the prototype, personas,
      a delivery note — write: No issue — <why>. -->
 

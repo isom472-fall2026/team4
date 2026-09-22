@@ -58,16 +58,17 @@ Prefer the smallest change that satisfies the acceptance criteria.
 
 Those are the student's acts, and the record of who did them is what gets graded.
 
-Commit messages use Conventional Commits with the story number at the end — `S-` plus the issue number:
+Commit messages use Conventional Commits with the story number at the end. The story
+number is the issue number:
 
 ```
-feat(orders): add duplicate-order check  [S-14]
-fix(login): reject an empty password  [S-9]
+feat(orders): add duplicate-order check  [#14]
+fix(login): reject an empty password  [#9]
 ```
 
 Types: `feat`, `fix`, `docs`, `refactor`, `test`, `chore`.
 
-One branch per story, named after it: `s-14-duplicate-orders`.
+One branch per story, named after it: `14-duplicate-orders`.
 
 Never add `Co-authored-by` or any tool trailer to a commit. The AI-Assisted line in the
 pull request is the declaration, and it is written by the student.

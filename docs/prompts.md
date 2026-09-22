@@ -31,7 +31,7 @@ Stop after ten stories. Do not write any code.
 ## Build one story
 
 ```
-Work on story <S-14>: <title>.
+Work on story <14>: <title>.
 
 Read the issue's acceptance criteria and the schema before you start.
 Build only what the criteria ask for. Do not change files the story did not name.
@@ -59,7 +59,7 @@ either half is built, and do not write code.
 ## Review a pull request
 
 ```
-Review the changes in this pull request against story <S-14> and its acceptance criteria.
+Review the changes in this pull request against story <14> and its acceptance criteria.
 
 For each criterion, say whether the change satisfies it and how you can tell. List
 anything that is in the diff but not in the story. Do not rewrite the code.
