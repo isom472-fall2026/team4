@@ -47,10 +47,20 @@ have done it twice.
    `feat(orders): add duplicate-order check  [#14]`
 6. **Open a pull request.** The template appears by itself. Fill in all of it, including
    the AI-Assisted line.
-7. **Ask a teammate to review it.** They open **Files changed → Review changes**, write
-   what they ran, read and clicked, and choose **Approve**. That comment is the review.
-   Nobody reviews their own work, and nobody writes the review in the description.
+7. **A teammate reviews it.** Opening the pull request already asks all of them — the
+   repository lists every member as an owner of every file, so GitHub requests the review
+   by itself and leaves you out of it. Whoever takes it clicks **Add your review** on the
+   pull request, or **Files changed → Review changes**, writes what they ran, read and
+   clicked, and chooses **Approve**. That comment is the review. Nobody reviews their own
+   work, and nobody writes the review in the description.
 8. **Merge it.** The issue closes by itself if you wrote `Closes #14` in the pull request.
+
+**If Approve is greyed out on a pull request that is not yours, you have not accepted the
+repository invitation.** Until you accept it, GitHub treats you as a visitor: you can read
+the code and leave a comment, and you cannot approve anything. Accept the invitation —
+it is in your email and at github.com/notifications — reload the page, and Approve is there.
+On *your own* pull request it stays greyed out, and that is deliberate: nobody approves
+their own work.
 
 If the loop feels slow in week 5, it will feel fast in week 10. Teams that skip it spend
 week 10 finding out who broke what.
