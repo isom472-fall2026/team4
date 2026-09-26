@@ -17,9 +17,9 @@ than in week 10.
 
 | Name | Standing role | Hours per week I can give | How to reach me fastest | Signed — by hand | Signed again — through Antigravity |
 |---|---|---|---|---|---|
-| Abdullah |  |  |  |  |  |
-| Hamad | Data Lead | 5 | teams - WhatsApp  | Hamad Behbehani |  |
 |  |  |  |  |  |  |
+|  |  |  |  |  |  |
+|Yousef Alfarhan | Design Lead | 4 | WhatsApp or Teams | Yousef |  |
 |  |  |  |  |  |  |
 |  |  |  |  |  |  |
 |  |  |  |  |  |  |
