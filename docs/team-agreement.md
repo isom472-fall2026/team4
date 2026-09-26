@@ -20,7 +20,7 @@ than in week 10.
 | Abdullah |  |  |  |  |  |
 | Hamad | Data Lead | 5 | teams - WhatsApp  | Hamad Behbehani |  |
 |  |  |  |  |  |  |
-|  |  |  |  |  |  |
+| abdullah alhouli | build lead  | 5 |  teams - whatsapp | abdullah alhouli|  |
 |  |  |  |  |  |  |
 |  |  |  |  |  |  |
 
