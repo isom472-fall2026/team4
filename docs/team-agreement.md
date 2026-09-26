@@ -20,7 +20,7 @@ than in week 10.
 |  |  |  |  |  |  |
 |  Hamad Behbehani |  Data Lead|  5| Teams - WhatsApp |Hamad  |  |
 |Yousef Alfarhan | Design Lead | 4 | WhatsApp or Teams | Yousef |  |
-|  |  |  |  |  |  |
+| abdullah alhouli | build lead |  5 | teams | alhouli |  |
 |  |  |  |  |  |  |
 |  |  |  |  |  |  |
 
