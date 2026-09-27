@@ -21,7 +21,7 @@ than in week 10.
 |Abdullah Alrashidi | Client Lead | 5 | Teams - Whatsapp | Alrashidi | AbdullahMFA 2026-09-27 |
 |  Hamad Behbehani |  Data Lead|  5| Teams - WhatsApp |Hamad  | 2201125907 |
 | abdullah alhouli | build lead |  5 | teams | alhouli |  |
-| Salem Al Sabah | Client lead  |5 | Whatsapp/Teams | Salem | | 
+| Salem Al Sabah | Client lead  |5 | Whatsapp/Teams | Salem | Salems03 2026-09-28 | 
 |  |  |  |  |  |  |
 
 Type your own name in the fifth column, in your own commit. Have Antigravity write your
