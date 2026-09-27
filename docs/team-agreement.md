@@ -18,7 +18,7 @@ than in week 10.
 | Name | Standing role | Hours per week I can give | How to reach me fastest | Signed — by hand | Signed again — through Antigravity |
 |---|---|---|---|---|---|
 |Abdullah Alrashidi | Client Lead | 5 | Teams - Whatsapp | Alrashidi | AbdullahMFA 2026-09-27 |
-|  Hamad Behbehani |  Data Lead|  5| Teams - WhatsApp |Hamad  | 2201125907 |
+|  Hamad Behbehani |  Data Lead|  5| Teams or WhatsApp |Hamad  | 2201125907 |
 |Yousef Alfarhan | Design Lead | 4 | WhatsApp or Teams | Yousef |  |
 | abdullah alhouli | build lead |  5 | teams | alhouli |  |
 | Salem Al Sabah | Client lead  |5 | Whatsapp/Teams | Salem | | 
