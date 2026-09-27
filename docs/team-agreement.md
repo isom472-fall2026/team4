@@ -19,7 +19,7 @@ than in week 10.
 |---|---|---|---|---|---|
 |  |  |  |  |  |  |
 |  |  |  |  |  |  |
-| Yousef Alfarhan | Design Lead | 4 | WhatsApp/Teams | Yousef | gtzsak 2026-09-27 |
+| Yousef Alfarhan | Design Lead | 4 | WhatsApp-Teams | Yousef | gtzsak 2026-09-27 |
 |  |  |  |  |  |  |
 |  |  |  |  |  |  |
 |  |  |  |  |  |  |
