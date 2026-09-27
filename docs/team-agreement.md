@@ -21,7 +21,7 @@ than in week 10.
 |  Hamad Behbehani |  Data Lead|  5| Teams - WhatsApp |Hamad  | 2201125907 |
 |Yousef Alfarhan | Design Lead | 4 | WhatsApp or Teams | Yousef |  |
 | abdullah alhouli | build lead |  5 | teams | alhouli |  |
-| Salem Al Sabah | Client lead  |5 | | Whatsapp/Teams | |Salem | 
+| Salem Al Sabah | Client lead  |5 | Whatsapp/Teams | Salem | | 
 |  |  |  |  |  |  |
 
 Type your own name in the fifth column, in your own commit. Have Antigravity write your
