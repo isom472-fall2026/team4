@@ -5,7 +5,7 @@ Campus Textbook Exchange and Library Demand Forecasting System
 ## 1. The client, and how you reach them
 
 Our intended client is the University Library Administration (specifically the textbook inventory and circulation staff). Because they are located on our own campus, we have direct physical access to their offices. We are scheduling an in-person meeting with the library supervisors this week to present our project scope and request their recurring participation for the semester.
-
+our client name is mohammed
 ## 2. What happens today, and what goes wrong
 
 Today, thousands of students finish their semesters with clean, reusable textbooks sitting idle at home because there is no official university exchange platform. Incoming students are forced to buy expensive new copies or risk buying outdated editions in unofficial chat groups. Meanwhile, the university library estimates procurement quantities blindly without analyzing live enrollment figures or existing campus book circulation, resulting in shortages for core courses and costly surplus stock sitting unsold in storage. 
