@@ -9,7 +9,7 @@ never met your client should understand what it is for after reading these two l
 > Write it in `docs/proposal.md`, then publish it. Steps: [docs/how-we-work.md](docs/how-we-work.md#phase-1--the-proposal)
 > Update this line at the start of every phase. It is the first thing your team sees.
 
-- **Proposal page:** TODO: link to the published page (`https://<owner>.github.io/<repo>/docs/`)
+- **Proposal page:** TODO: link to the published page (`https://isom472-fall2026.github.io/team4/docs/`)
 - **Running system:** TODO: link to the deployed system once it exists
 - **Board:** TODO: link to your Project board
 
