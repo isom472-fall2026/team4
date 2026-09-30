@@ -19,8 +19,8 @@ than in week 10.
 |---|---|---|---|---|---|
 | Yousef Alfarhan | Design Lead | 4 | WhatsApp-Teams | Yousef | gtzsak 2026-09-27 |
 |Abdullah Alrashidi | Client Lead | 5 | Teams - Whatsapp | Alrashidi | AbdullahMFA 2026-09-27 |
-|  Hamad Behbehani |  Data Lead|  5| Teams - WhatsApp |Hamad  | 2201125907 |
-| abdullah alhouli | build lead |  5 | teams | alhouli |  | alhouli
+|  Hamad Behbehani |  Data Lead|  5| Teams - WhatsApp | Hamad  | 2201125907 |
+| abdullah alhouli | build lead |  5 | teams-Whatsapp | alhouli | abdullahalhouli21-beep 2026-09-30 |
 | Salem Al Sabah | FinOps lead  |5 | Whatsapp/Teams | Salem | Salems03 2026-09-28 | 
 |  |  |  |  |  |  |
 
