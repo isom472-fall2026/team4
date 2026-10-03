@@ -41,7 +41,7 @@ it. Do not delete it.
 | Data Lead | Hamad Behbehani | the schema and seed data in Supabase |
 | Build Lead | Abdullah Alhouli | the running system and release notes |
 | FinOps Lead | Salem Alsabah | the ledger |
-| Quality Lead | TODO | bug issues, each closed as fixed, will-not-fix or not-a-bug |
+| Quality Lead | Salem Alsabah | bug issues, each closed as fixed, will-not-fix or not-a-bug |
 
 At six members, every role is held by one person. At five, one person holds a combined
 Quality and FinOps Lead. **At four there is no FinOps or Quality Lead at all:** whoever is
