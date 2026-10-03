@@ -53,7 +53,7 @@ cuts the tag.
 | Phase | Phase Lead | Due |
 |---|---|---|
 | 1 — team, environment, proposal | TODO | Wed 23 Sep |
-| 2 — design sprint | TODO | Wed 7 Oct |
+| 2 — design sprint | Yousef Alfarhan | Wed 7 Oct |
 | 3 — sprint 1 | TODO | Wed 21 Oct |
 | 4 — sprint 2 | TODO | Wed 4 Nov |
 | 5 — sprint 3 | TODO | Wed 18 Nov |
