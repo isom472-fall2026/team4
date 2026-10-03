@@ -36,11 +36,11 @@ it. Do not delete it.
 
 | Role | Name | What they hand in |
 |---|---|---|
-| Client Lead | TODO | the backlog of user stories |
-| Design Lead | TODO | the prototype and the screen list |
-| Data Lead | TODO | the schema and seed data in Supabase |
-| Build Lead | TODO | the running system and release notes |
-| FinOps Lead | TODO | the ledger |
+| Client Lead |Abdullah Alrashidi | the backlog of user stories |
+| Design Lead | Yousef Alfarhan  | the prototype and the screen list |
+| Data Lead | Hamad Behbehani | the schema and seed data in Supabase |
+| Build Lead | Abdullah Alhouli | the running system and release notes |
+| FinOps Lead | Salem Alsabah | the ledger |
 | Quality Lead | TODO | bug issues, each closed as fixed, will-not-fix or not-a-bug |
 
 At six members, every role is held by one person. At five, one person holds a combined
@@ -52,7 +52,7 @@ cuts the tag.
 
 | Phase | Phase Lead | Due |
 |---|---|---|
-| 1 — team, environment, proposal | TODO | Wed 23 Sep |
+| 1 — team, environment, proposal | Hamad Behbehani | Wed 23 Sep |
 | 2 — design sprint | TODO | Wed 7 Oct |
 | 3 — sprint 1 | TODO | Wed 21 Oct |
 | 4 — sprint 2 | TODO | Wed 4 Nov |
