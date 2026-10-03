@@ -1,41 +1,39 @@
 # Proposal
 
-Campus Textbook Exchange and Library Demand Forecasting System
+Campus Textbook Exchange System
 
 ## 1. The client, and how you reach them
 
-Our intended client is the University Library Administration (specifically the textbook inventory and circulation staff). Because they are located on our own campus, we have direct physical access to their offices. We are scheduling an in-person meeting with the library supervisors this week to present our project scope and request their recurring participation for the semester.
+Our client is the University Library, represented by Eng. Mohammed, an official at the university library. Because his office is located directly on our university campus, we contacted him in person and obtained his approval to develop this project. He is accessible on campus and via university email to answer questions, verify requirements, and review system milestones as the semester progresses.
 
 ## 2. What happens today, and what goes wrong
 
-Today, thousands of students finish their semesters with clean, reusable textbooks sitting idle at home because there is no official university exchange platform. Incoming students are forced to buy expensive new copies or risk buying outdated editions in unofficial chat groups. Meanwhile, the university library estimates procurement quantities blindly without analyzing live enrollment figures or existing campus book circulation, resulting in shortages for core courses and costly surplus stock sitting unsold in storage. 
-
+Today, students finish their semesters with clean, reusable textbooks sitting idle at home because there is no official university exchange platform. Incoming students are forced to spend substantial money buying expensive new copies every term, or turn to unverified social media and chat groups where they face payment scams, unreliable meetups, and frequently end up purchasing outdated or incorrect syllabus editions that are no longer accepted in class.
 
 ## 3. Who is better off, and how you would know
 
-Both university students and library procurement managers are directly better off. Success is measured by reducing student textbook spending through peer-to-peer reuse, eliminating wasted surplus inventory in library storage, and accelerating how quickly students secure verified course materials before the drop/add deadline ends.
+University students are measurably better off financially and academically. Today, 0% of peer-to-peer textbook handoffs occur through an official verified platform, and students spend up to 40–60 KWD per semester on new copies or wait over 7 days in unverified chat groups. Our target is to facilitate at least 150 verified book exchanges in the first semester, cut the time to secure an approved course edition to under 24 hours, and save participating students approximately 50% of their textbook costs.
 
 ## 4. What the system does, in outline
 
-* Provides a student-to-student marketplace to list, browse, and trade clean used textbooks by course code and ISBN.
-* Verifies automatically that listed student books match the active academic syllabus edition.
-* Analyzes course section enrollments to forecast total student textbook demand per department.
-* Calculates recommended library procurement quantities by subtracting peer-listed copies from total enrolled students.
-* Provides library administrators with alert dashboards highlighting anticipated book shortages or overstock risks.
+* Enables students to list clean used textbooks by course code, ISBN, condition rating, and trade preference.
+* Provides a searchable campus catalog filtered by department, course code, and approved book title. 
+* Automatically verifies that listed books match the current semester's required syllabus edition.
+* Facilitates secure handoff scheduling between student buyers and sellers at designated campus locations.
+* Provides library administration with a moderation dashboard to review listings and monitor campus exchange activity.
 
 ## 5. What it records
 
-The system maintains persistent records including course-to-textbook syllabus mappings (course code, approved edition, ISBN), student book listings (condition rating, availability state, handoff timestamps), historical and active semester enrollment figures, and inventory forecasting logs with recommended procurement quantities.
+The system maintains persistent records including course-to-textbook syllabus mappings (course code, approved edition, ISBN), student book listings (book condition, availability state, price/swap preference), user exchange requests and handoff completion timestamps, and an administrative moderation log tracking active and resolved listings.
 
 ## 6. In scope by the final week — and what is not
 
-* **In Scope:** Student textbook exchange web portal; course edition verification tool; enrollment-based forecasting algorithm; library admin dashboard for purchase recommendations.
-* **Out of Scope:** Direct automated purchase order integration with overseas book publishers; in-app monetary payment processing; off-campus parcel delivery logistics.
-
+* **In Scope:** In Scope: Student textbook listing and search web portal; syllabus edition verification check; on-campus handoff scheduling workflow; administrative moderation dashboard for library staff.
+* **Out of Scope:** Out of Scope: Integrated online monetary payment processing (handoffs and payments are handled directly between students); off-campus delivery or shipping services; commercial bookstore inventory management.
 ## 7. After the semester
 
-The platform can be permanently integrated into the university library's student service portal, or adopted by other academic colleges across Kuwait to standardize campus textbook exchanges and reduce procurement waste.
+The platform can be permanently maintained by the university library as an official student service, or scaled to other colleges and academic institutions across Kuwait to standardize student book exchanges.
 
 ## 8. What you told the client this is
 
-In our upcoming initial meeting, we will explain to the library staff that this is strictly an undergraduate capstone prototype. We will make clear that the system will use exported sample registration records and textbook lists, without requiring any direct integration with the university's official databases.
+We spoke with Eng. Mohammed and explicitly explained that this is an undergraduate capstone semester prototype. He understands that the system will operate as a standalone campus exchange platform tested with student user data, without requiring any modifications to the university’s internal IT systems.
