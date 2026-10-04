@@ -9,16 +9,18 @@ You write these in Phase 2, from what your client told you — not from imaginat
 
 ---
 
-## <!-- EXAMPLE — delete this persona --> Mariam, shop supervisor
+## Eng. Mohammed, library administrator
 
-Mariam runs the counter on the morning shift. She takes orders on paper because the till
-is slow, then types them in when it is quiet. By the afternoon she cannot remember whether
-an order was already entered, so she checks the last ten by eye and sometimes ships the
-same box twice. She is fast, she is not interested in computers, and she will stop using
-anything that takes more than a few seconds.
+Eng. Mohammed manages circulation inquiries and academic textbook reserves at the university library. He wants to ensure students have timely access to syllabus-approved course materials and monitor peer-to-peer textbook exchanges across campus through a moderation dashboard. Today, he has no visibility into student textbook trades, and students frequently come to the library circulation desk distressed after buying obsolete syllabus editions from unverified social media groups. He needs a straightforward interface to verify syllabus edition mappings and resolve flagged listings in between student visits without dealing with complex IT systems.
 
 ---
 
-## <name>, <role>
+## Noura, student buyer
 
-<one paragraph>
+Noura is an undergraduate student registered for four courses this semester. She needs to secure clean, syllabus-approved textbooks before the drop-and-add period ends without spending 10 to 30 KWD per book on new bookstore copies. Today, she searches through unverified student WhatsApp and Telegram groups where listings omit edition numbers, sellers take days to respond or fail to show up, and she risks paying for obsolete editions that instructors reject in class. She will abandon any tool that forces her through long setup forms when she just needs to search a course code, verify the edition, and schedule a fast on-campus handoff between lectures.
+
+---
+
+## Fahad, student seller
+
+Fahad is a senior student who finished his business courses with several clean, reusable textbooks sitting idle on his desk. He wants to list his finished books by course code and ISBN, state their condition, and sell or trade them to incoming students to recover costs and clear space. Today, posting in generic chat groups buries his messages under hundreds of class notes, attracts buyers who negotiate endlessly without committing, and leads to wasted trips across campus when buyers fail to meet at the agreed time. He needs a direct listing flow that matches his books against the active syllabus and locks in a clear campus meetup location.
