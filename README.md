@@ -36,12 +36,12 @@ it. Do not delete it.
 
 | Role | Name | What they hand in |
 |---|---|---|
-| Client Lead | TODO | the backlog of user stories |
-| Design Lead | TODO | the prototype and the screen list |
-| Data Lead | TODO | the schema and seed data in Supabase |
-| Build Lead | TODO | the running system and release notes |
-| FinOps Lead | TODO | the ledger |
-| Quality Lead | TODO | bug issues, each closed as fixed, will-not-fix or not-a-bug |
+| Client Lead |Abdullah Alrashidi | the backlog of user stories |
+| Design Lead | Yousef Alfarhan  | the prototype and the screen list |
+| Data Lead | Hamad Behbehani | the schema and seed data in Supabase |
+| Build Lead | Abdullah Alhouli | the running system and release notes |
+| FinOps Lead | Salem Alsabah | the ledger |
+| Quality Lead | Salem Alsabah | bug issues, each closed as fixed, will-not-fix or not-a-bug |
 
 At six members, every role is held by one person. At five, one person holds a combined
 Quality and FinOps Lead. **At four there is no FinOps or Quality Lead at all:** whoever is
@@ -52,12 +52,12 @@ cuts the tag.
 
 | Phase | Phase Lead | Due |
 |---|---|---|
-| 1 — team, environment, proposal | TODO | Wed 23 Sep |
+| 1 — team, environment, proposal | Hamad Behbehani | Wed 23 Sep |
 | 2 — design sprint | Yousef Alfarhan | Wed 7 Oct |
-| 3 — sprint 1 | TODO | Wed 21 Oct |
-| 4 — sprint 2 | TODO | Wed 4 Nov |
-| 5 — sprint 3 | TODO | Wed 18 Nov |
-| 6 — final sprint | TODO | Wed 9 Dec |
+| 3 — sprint 1 | Salem Alsabah | Wed 21 Oct |
+| 4 — sprint 2 | Abdullah Alhouli | Wed 4 Nov |
+| 5 — sprint 3 | Abdullah Alrashidi | Wed 18 Nov |
+| 6 — final sprint | Hamad Behbehani | Wed 9 Dec |
 
 ## What is in this repository
 
