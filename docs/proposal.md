@@ -12,7 +12,7 @@ Today, students finish their semesters with clean, reusable textbooks sitting id
 
 ## 3. Who is better off, and how you would know
 
-University students are measurably better off financially and academically. Today, 0% of peer-to-peer textbook handoffs occur through an official verified platform, and students spend up to 40–60 KWD per semester on new copies or wait over 7 days in unverified chat groups. Our target is to facilitate at least 150 verified book exchanges in the first semester, cut the time to secure an approved course edition to under 24 hours, and save participating students approximately 50% of their textbook costs.
+University students are measurably better off financially and academically. Today, 0% of peer-to-peer textbook handoffs occur through an official verified platform, and students spend up to 10–30 KWD per semester on new copies or wait over 7 days in unverified chat groups. Our target is to facilitate at least 150 verified book exchanges in the first semester, cut the time to secure an approved course edition to under 24 hours, and save participating students approximately 50% of their textbook costs.
 
 ## 4. What the system does, in outline
 
