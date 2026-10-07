@@ -24,4 +24,3 @@ Noura is an undergraduate student registered for four courses this semester. She
 ## Fahad, student seller
 
 Fahad is a senior student who finished his business courses with several clean, reusable textbooks sitting idle on his desk. He wants to list his finished books by course code and ISBN, state their condition, and sell or trade them to incoming students to recover costs and clear space. Today, posting in generic chat groups buries his messages under hundreds of class notes, attracts buyers who negotiate endlessly without committing, and leads to wasted trips across campus when buyers fail to meet at the agreed time. He needs a direct listing flow that matches his books against the active syllabus and locks in a clear campus meetup location.
-rom his daily library duties.
