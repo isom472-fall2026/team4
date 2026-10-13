@@ -59,4 +59,4 @@ No stories are built in Phase 2. This table shows each member's Phase 2 work and
 <!-- What was planned and was not finished, and what happened to it: moved to the next phase,
      dropped, or replaced. Say which. -->
 
-_Write "Nothing" if everything above is done by the tag._
+_Nothing._
