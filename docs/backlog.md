@@ -18,7 +18,7 @@ the story ID, the title, who built it, and what happened to it.
 | #42 | Admin retires a textbook at the end of a semester | Abdullah Alhouli | planned for Phase 3 |
 | #44 | Seller lists a used textbook | Hamad Behbehani | planned for Phase 3 |
 | #47 | New listings are checked against the syllabus edition | Hamad Behbehani | planned for Phase 3 |
-| #45 | Seller sees their own listings | Yousef Alfarhan | planned for Phase 3 |
+| #50 | Seller sees their own listings | Yousef Alfarhan | planned for Phase 3 |
 | #54 | Seller edits or withdraws a listing | Yousef Alfarhan | planned for Phase 3 |
 | #56 | Buyer browses the catalog | Hamad Behbehani | planned for Phase 4 |
 | #58 | Buyer searches by course code | Hamad Behbehani | planned for Phase 4 |
@@ -48,7 +48,7 @@ the story ID, the title, who built it, and what happened to it.
 | #65 | Admin resolves a report | Hamad Behbehani | planned for Phase 6 |
 | #66 | Admin sees the moderation log | Yousef Alfarhan | planned for Phase 6 |
 | #68 | Seller sees why a listing was removed | Yousef Alfarhan | planned for Phase 6 |
-| #77 | Admin sees exchange activity numbers | Salem Alsabah | planned for Phase 6 |
+| #70 | Admin sees exchange activity numbers | Salem Alsabah | planned for Phase 6 |
 | #72 | Admin sees estimated student savings | Salem Alsabah | planned for Phase 6 |
 
 ## Phase 3 — saved 21 October
