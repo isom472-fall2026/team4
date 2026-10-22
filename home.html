@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | Campus Textbook Exchange</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-container">
+      <div>
+        <div class="brand-title">Kuwait University</div>
+        <div class="brand-sub">Campus Textbook Exchange</div>
+      </div>
+      <div>
+        <button type="button" id="logout-btn" class="btn-primary" style="width: auto; margin-top: 0; padding: 0.5rem 1rem; font-size: 0.875rem;">Log out</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="card" aria-labelledby="home-heading">
+      <header class="card-header">
+        <h1 id="home-heading" class="card-title">Campus Textbook Exchange</h1>
+        <p id="user-info" class="card-desc">Checking session...</p>
+      </header>
+
+      <div style="text-align: center; margin-top: 1.5rem;">
+        <button type="button" id="logout-btn-card" class="btn-primary">Log out</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; Kuwait University Campus Textbook Exchange &middot; ISOM 472</p>
+  </footer>
+
+  <!-- Supabase client and application scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/client.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>
