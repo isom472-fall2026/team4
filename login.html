@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In | Campus Textbook Exchange</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-container">
+      <div>
+        <div class="brand-title">Kuwait University</div>
+        <div class="brand-sub">Campus Textbook Exchange</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="card" aria-labelledby="form-heading">
+      <header class="card-header">
+        <h1 id="form-heading" class="card-title">Log In</h1>
+        <p class="card-desc">Sign in with your university email to buy, sell, or swap course textbooks.</p>
+      </header>
+
+      <form id="login-form" novalidate>
+        <div class="form-group">
+          <label for="email">University Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            autocomplete="email"
+            placeholder="e.g. s2211127765@ku.edu.kw"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            autocomplete="current-password"
+            placeholder="Enter your password"
+          >
+        </div>
+
+        <button type="submit" id="submit-btn" class="btn-primary">Log In</button>
+
+        <div id="message" class="message" role="alert" aria-live="polite" hidden></div>
+
+        <p style="text-align: center; margin-top: 1.25rem;">
+          <a href="index.html" style="color: var(--accent); text-decoration: none;">Don't have an account? Sign up</a>
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; Kuwait University Campus Textbook Exchange &middot; ISOM 472</p>
+  </footer>
+
+  <!-- Supabase client and application scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/client.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>
