@@ -36,7 +36,7 @@ If the quota runs out: switch Pro → Flash with a narrower prompt; then a teamm
 
 | Story | Assistant used | What it used (tokens, requests, or your own estimate) | What we gave it (files, story, schema) | What we would do differently |
 |---|---|---|---|---|
-|  |  |  |  |  |
+| #37 Sign up with a university email | Antigravity (Gemini Pro) | 1 conversation, about 3 requests, 22 Oct | the story's criteria, AGENTS.md, docs/schema.md, db/schema.sql | check config.js before pushing — the URL had /rest/v1/ and the keys were not committed at first |  |  |  |  |
 
 ## Phase 4
 
