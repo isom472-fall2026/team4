@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Sign Up | Campus Textbook Exchange</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-container">
+      <div>
+        <div class="brand-title">Kuwait University</div>
+        <div class="brand-sub">Campus Textbook Exchange</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="card" aria-labelledby="form-heading">
+      <header class="card-header">
+        <h1 id="form-heading" class="card-title">Create an Account</h1>
+        <p class="card-desc">Sign up with your university email to buy, sell, or swap course textbooks.</p>
+      </header>
+
+      <form id="signup-form" novalidate>
+        <div class="form-group">
+          <label for="full-name">Full Name</label>
+          <input
+            type="text"
+            id="full-name"
+            name="full_name"
+            required
+            autocomplete="name"
+            placeholder="e.g. Salem Alsabah"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="student-id">Student ID</label>
+          <input
+            type="text"
+            id="student-id"
+            name="student_id"
+            required
+            placeholder="e.g. 2211127765"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="email">University Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            autocomplete="email"
+            placeholder="e.g. s2211127765@ku.edu.kw"
+          >
+          <span class="form-hint">Must end with @ku.edu.kw or a college subdomain (e.g. @cba.ku.edu.kw)</span>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            minlength="6"
+            autocomplete="new-password"
+            placeholder="At least 6 characters"
+          >
+        </div>
+
+        <button type="submit" id="submit-btn" class="btn-primary">Create Account</button>
+
+        <div id="message" class="message" role="alert" aria-live="polite" hidden></div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; Kuwait University Campus Textbook Exchange &middot; ISOM 472</p>
+  </footer>
+
+  <!-- Supabase client and application scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/client.js"></script>
+  <script src="js/signup.js"></script>
+</body>
+</html>
