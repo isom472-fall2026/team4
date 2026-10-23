@@ -38,6 +38,7 @@ If the quota runs out: switch Pro → Flash with a narrower prompt; then a teamm
 |---|---|---|---|---|
 | #37 Sign up with a university email | Antigravity (Gemini Pro) | 1 conversation, about 3 requests, 22 Oct | the story's criteria, AGENTS.md, docs/schema.md, db/schema.sql | check config.js before pushing — the URL had /rest/v1/ and the keys were not committed at first |  
 | #38 Log in and log out | Antigravity (Gemini Flash) | 1 conversation, about 2 requests, 22 Oct | the story's criteria, AGENTS.md, docs/schema.md, js/config.js, js/client.js, js/signup.js | tell it the name of the existing client (window.supabaseClient) so it reuses it instead of making a new one |
+| #39 Library staff have an admin account | Antigravity (Gemini Pro) | 1 conversation, about 1 request, 23 Oct | the story's criteria, AGENTS.md, docs/schema.md, db/schema.sql, home.html, js/auth.js, js/home.js, js/client.js | saying "do not reformat existing code" and naming window.supabaseClient kept the change small — 7 lines in home.js |
 
 
 ## Phase 4
