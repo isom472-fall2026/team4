@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sell a Textbook | Campus Textbook Exchange</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-container">
+      <div>
+        <div class="brand-title">Kuwait University</div>
+        <div class="brand-sub">Campus Textbook Exchange</div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <a href="home.html" style="color: #ffffff; text-decoration: none; font-weight: 600; font-size: 0.875rem;">Home</a>
+        <button type="button" id="logout-btn" class="btn-primary" style="width: auto; margin-top: 0; padding: 0.5rem 1rem; font-size: 0.875rem;">Log out</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="card" aria-labelledby="sell-heading">
+      <header class="card-header">
+        <h1 id="sell-heading" class="card-title">Sell a Textbook</h1>
+        <p class="card-desc">List a used textbook for sale or swap.</p>
+      </header>
+
+      <form id="sell-form" novalidate>
+        <div class="form-group">
+          <label for="course_code">Course</label>
+          <select
+            id="course_code"
+            name="course_code"
+            required
+            style="width: 100%; padding: 0.75rem 0.875rem; font-size: 0.95rem; color: var(--text-main); background-color: #ffffff; border: 1px solid var(--border); border-radius: 6px; outline: none;"
+          >
+            <option value="">Select a course</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="isbn">ISBN</label>
+          <input
+            type="text"
+            id="isbn"
+            name="isbn"
+            required
+            placeholder="e.g. 9780134018607"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="condition">Condition</label>
+          <select
+            id="condition"
+            name="condition"
+            required
+            style="width: 100%; padding: 0.75rem 0.875rem; font-size: 0.95rem; color: var(--text-main); background-color: #ffffff; border: 1px solid var(--border); border-radius: 6px; outline: none;"
+          >
+            <option value="like_new">Like new</option>
+            <option value="good">Good</option>
+            <option value="fair">Fair</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="trade_type">Trade Type</label>
+          <select
+            id="trade_type"
+            name="trade_type"
+            required
+            style="width: 100%; padding: 0.75rem 0.875rem; font-size: 0.95rem; color: var(--text-main); background-color: #ffffff; border: 1px solid var(--border); border-radius: 6px; outline: none;"
+          >
+            <option value="sell">Sell</option>
+            <option value="swap">Swap</option>
+            <option value="either">Either</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="price_kwd">Price (KWD)</label>
+          <input
+            type="number"
+            id="price_kwd"
+            name="price_kwd"
+            step="0.001"
+            min="0"
+            placeholder="e.g. 15.000"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Notes (optional)</label>
+          <input
+            type="text"
+            id="notes"
+            name="notes"
+            placeholder="e.g. Minor highlighting in chapter 2"
+          >
+        </div>
+
+        <button type="submit" id="save-btn" class="btn-primary">Save</button>
+
+        <div id="message" class="message" role="alert" aria-live="polite" hidden></div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; Kuwait University Campus Textbook Exchange &middot; ISOM 472</p>
+  </footer>
+
+  <!-- Supabase client and application scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/client.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/sell.js"></script>
+</body>
+</html>
