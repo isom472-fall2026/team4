@@ -41,6 +41,7 @@ If the quota runs out: switch Pro → Flash with a narrower prompt; then a teamm
 | #39 Library staff have an admin account | Antigravity (Gemini Pro) | 1 conversation, about 1 request, 23 Oct | the story's criteria, AGENTS.md, docs/schema.md, db/schema.sql, home.html, js/auth.js, js/home.js, js/client.js | saying "do not reformat existing code" and naming window.supabaseClient kept the change small — 7 lines in home.js |
 | #40 Admin adds a course | Antigravity (Gemini Flash) | 1 conversation, about 1 request, 23 Oct | the story's criteria, AGENTS.md, docs/schema.md, db/schema.sql, admin.html, js/admin.js, js/auth.js, js/client.js | Flash was enough because the database already enforced the duplicate and student rules — only a page was needed |
 | #41 Admin adds the approved textbook for a course | Antigravity (Gemini Flash) | 1 conversation, about 1 request, 23 Oct | the story's criteria, AGENTS.md, docs/schema.md, db/schema.sql, admin.html, courses.html, js/courses.js, js/auth.js, js/client.js | giving it the exact error codes (23505, 23514) produced a clear message for each refusal |
+| #44 Seller lists a used textbook | Antigravity (Gemini Flash) | 1 conversation, about 1 request, 23 Oct | the story's criteria, AGENTS.md, docs/schema.md, db/schema.sql, home.html, js/home.js, textbooks.html, js/textbooks.js, js/auth.js, js/client.js | telling it which columns NOT to send (status, edition_verified, syllabus_book_id) kept the edition check free for #47 |
 
 
 
