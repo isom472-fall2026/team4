@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Textbooks | Campus Textbook Exchange</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-container">
+      <div>
+        <div class="brand-title">Kuwait University</div>
+        <div class="brand-sub">Campus Textbook Exchange</div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <a href="home.html" style="color: #ffffff; text-decoration: none; font-weight: 600; font-size: 0.875rem;">Home</a>
+        <button type="button" id="logout-btn" class="btn-primary" style="width: auto; margin-top: 0; padding: 0.5rem 1rem; font-size: 0.875rem;">Log out</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="card" aria-labelledby="textbooks-heading" id="textbooks-card" hidden>
+      <header class="card-header">
+        <h1 id="textbooks-heading" class="card-title">Add Approved Textbook</h1>
+        <p class="card-desc">Enter textbook details for an approved course syllabus.</p>
+      </header>
+
+      <form id="textbook-form" novalidate>
+        <div class="form-group">
+          <label for="course_code">Course</label>
+          <select
+            id="course_code"
+            name="course_code"
+            required
+            style="width: 100%; padding: 0.75rem 0.875rem; font-size: 0.95rem; color: var(--text-main); background-color: #ffffff; border: 1px solid var(--border); border-radius: 6px; outline: none;"
+          >
+            <option value="">Select a course</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="isbn">ISBN</label>
+          <input
+            type="text"
+            id="isbn"
+            name="isbn"
+            required
+            placeholder="e.g. 9780134018607"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            required
+            placeholder="e.g. Financial Accounting"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="author">Author</label>
+          <input
+            type="text"
+            id="author"
+            name="author"
+            placeholder="e.g. Walter T. Harrison"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="approved_edition">Approved Edition</label>
+          <input
+            type="text"
+            id="approved_edition"
+            name="approved_edition"
+            required
+            placeholder="e.g. 11th Edition"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="list_price_kwd">List Price (KWD)</label>
+          <input
+            type="number"
+            id="list_price_kwd"
+            name="list_price_kwd"
+            step="0.001"
+            min="0"
+            placeholder="e.g. 25.000"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="semester">Semester</label>
+          <input
+            type="text"
+            id="semester"
+            name="semester"
+            required
+            placeholder="e.g. Fall 2026"
+          >
+        </div>
+
+        <button type="submit" id="save-btn" class="btn-primary">Save</button>
+
+        <div id="message" class="message" role="alert" aria-live="polite" hidden></div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; Kuwait University Campus Textbook Exchange &middot; ISOM 472</p>
+  </footer>
+
+  <!-- Supabase client and application scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/client.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/textbooks.js"></script>
+</body>
+</html>
