@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses | Campus Textbook Exchange</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-container">
+      <div>
+        <div class="brand-title">Kuwait University</div>
+        <div class="brand-sub">Campus Textbook Exchange</div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <a href="home.html" style="color: #ffffff; text-decoration: none; font-weight: 600; font-size: 0.875rem;">Home</a>
+        <button type="button" id="logout-btn" class="btn-primary" style="width: auto; margin-top: 0; padding: 0.5rem 1rem; font-size: 0.875rem;">Log out</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="card" aria-labelledby="courses-heading" id="courses-card" hidden>
+      <header class="card-header">
+        <h1 id="courses-heading" class="card-title">Add Course</h1>
+        <p class="card-desc">Enter course details to add a new course.</p>
+      </header>
+
+      <form id="course-form" novalidate>
+        <div class="form-group">
+          <label for="course_code">Course Code</label>
+          <input
+            type="text"
+            id="course_code"
+            name="course_code"
+            required
+            placeholder="e.g. ACC 101"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="course_title">Course Title</label>
+          <input
+            type="text"
+            id="course_title"
+            name="course_title"
+            required
+            placeholder="e.g. Introductory Accounting"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="department">Department</label>
+          <input
+            type="text"
+            id="department"
+            name="department"
+            required
+            placeholder="e.g. Accounting"
+          >
+        </div>
+
+        <button type="submit" id="save-btn" class="btn-primary">Save</button>
+
+        <div id="message" class="message" role="alert" aria-live="polite" hidden></div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; Kuwait University Campus Textbook Exchange &middot; ISOM 472</p>
+  </footer>
+
+  <!-- Supabase client and application scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/client.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/courses.js"></script>
+</body>
+</html>
