@@ -7,6 +7,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     userInfoEl.textContent = `Signed in as ${profile.full_name} (${profile.role})`;
   }
 
+  if (profile.role === 'admin') {
+    const adminMenu = document.getElementById('admin-menu');
+    if (adminMenu) {
+      adminMenu.hidden = false;
+    }
+  }
+
   document.body.dataset.userId = profile.id;
   document.body.dataset.userRole = profile.role;
 
