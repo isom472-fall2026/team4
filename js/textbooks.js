@@ -65,6 +65,133 @@ document.addEventListener('DOMContentLoaded', async () => {
     showMessage(err.message || 'Failed to load courses.', 'error');
   }
 
+  async function loadActiveTextbooks() {
+    const container = document.getElementById('active-textbooks-container');
+    if (!container) return;
+
+    try {
+      const { data: books, error: booksError } = await client
+        .from('syllabus_books')
+        .select('syllabus_book_id, course_code, title, approved_edition, isbn, semester')
+        .eq('is_active', true)
+        .order('course_code', { ascending: true });
+
+      if (booksError) {
+        showMessage(booksError.message || 'Failed to load active textbooks.', 'error');
+        return;
+      }
+
+      container.innerHTML = '';
+
+      if (!books || books.length === 0) {
+        const emptyMsg = document.createElement('p');
+        emptyMsg.className = 'card-desc';
+        emptyMsg.style.textAlign = 'center';
+        emptyMsg.style.marginTop = '1rem';
+        emptyMsg.textContent = 'No active textbooks.';
+        container.appendChild(emptyMsg);
+        return;
+      }
+
+      const tableWrapper = document.createElement('div');
+      tableWrapper.style.overflowX = 'auto';
+
+      const table = document.createElement('table');
+      table.className = 'textbooks-table';
+
+      const thead = document.createElement('thead');
+      const headerRow = document.createElement('tr');
+      ['Course', 'Title', 'Edition', 'ISBN', 'Semester', 'Action'].forEach((headingText) => {
+        const th = document.createElement('th');
+        th.textContent = headingText;
+        if (headingText === 'Action') {
+          th.style.textAlign = 'right';
+        }
+        headerRow.appendChild(th);
+      });
+      thead.appendChild(headerRow);
+      table.appendChild(thead);
+
+      const tbody = document.createElement('tbody');
+      tbody.id = 'active-textbooks-body';
+
+      books.forEach((book) => {
+        const tr = document.createElement('tr');
+
+        const tdCourse = document.createElement('td');
+        tdCourse.textContent = book.course_code;
+        tr.appendChild(tdCourse);
+
+        const tdTitle = document.createElement('td');
+        tdTitle.textContent = book.title;
+        tr.appendChild(tdTitle);
+
+        const tdEdition = document.createElement('td');
+        tdEdition.textContent = book.approved_edition;
+        tr.appendChild(tdEdition);
+
+        const tdIsbn = document.createElement('td');
+        tdIsbn.textContent = book.isbn;
+        tr.appendChild(tdIsbn);
+
+        const tdSemester = document.createElement('td');
+        tdSemester.textContent = book.semester;
+        tr.appendChild(tdSemester);
+
+        const tdAction = document.createElement('td');
+        tdAction.style.textAlign = 'right';
+
+        const retireBtn = document.createElement('button');
+        retireBtn.type = 'button';
+        retireBtn.className = 'btn-retire';
+        retireBtn.textContent = 'Retire';
+
+        retireBtn.addEventListener('click', async () => {
+          const confirmMessage = `Retire ${book.title} (${book.semester})? Students will no longer be able to list it.`;
+          if (!window.confirm(confirmMessage)) {
+            return;
+          }
+
+          retireBtn.disabled = true;
+          retireBtn.textContent = 'Retiring...';
+
+          try {
+            const { error: updateError } = await client
+              .from('syllabus_books')
+              .update({ is_active: false })
+              .eq('syllabus_book_id', book.syllabus_book_id);
+
+            if (updateError) {
+              showMessage(updateError.message || 'Failed to retire textbook.', 'error');
+              retireBtn.disabled = false;
+              retireBtn.textContent = 'Retire';
+              return;
+            }
+
+            showMessage('Textbook retired.', 'success');
+            await loadActiveTextbooks();
+          } catch (err) {
+            showMessage(err.message || 'An unexpected error occurred while retiring the textbook.', 'error');
+            retireBtn.disabled = false;
+            retireBtn.textContent = 'Retire';
+          }
+        });
+
+        tdAction.appendChild(retireBtn);
+        tr.appendChild(tdAction);
+        tbody.appendChild(tr);
+      });
+
+      table.appendChild(tbody);
+      tableWrapper.appendChild(table);
+      container.appendChild(tableWrapper);
+    } catch (err) {
+      showMessage(err.message || 'Failed to load active textbooks.', 'error');
+    }
+  }
+
+  await loadActiveTextbooks();
+
   const form = document.getElementById('textbook-form');
   const saveBtn = document.getElementById('save-btn');
 
@@ -145,6 +272,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
 
       showMessage('Textbook saved.', 'success');
+      await loadActiveTextbooks();
 
       // Preserve selected course for rapid entry of multiple books under one course
       const currentCourse = courseSelect ? courseSelect.value : '';
