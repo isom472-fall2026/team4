@@ -10,7 +10,7 @@ never met your client should understand what it is for after reading these two l
 > Update this line at the start of every phase. It is the first thing your team sees.
 
 - **Proposal page:** TODO: link to the published page (`https://isom472-fall2026.github.io/team4/docs/`)
-- **Running system:** TODO: link to the deployed system once it exists
+- **Running system:** (https://isom472-fall2026.github.io/team4/)
 - **Board:** TODO: link to your Project board
 
 ## Where do I go?
