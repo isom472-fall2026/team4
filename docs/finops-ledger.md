@@ -43,6 +43,8 @@ If the quota runs out: switch Pro → Flash with a narrower prompt; then a teamm
 | #41 Admin adds the approved textbook for a course | Antigravity (Gemini Flash) | 1 conversation, about 1 request, 23 Oct | the story's criteria, AGENTS.md, docs/schema.md, db/schema.sql, admin.html, courses.html, js/courses.js, js/auth.js, js/client.js | giving it the exact error codes (23505, 23514) produced a clear message for each refusal |
 | #44 Seller lists a used textbook | Antigravity (Gemini Flash) | 1 conversation, about 1 request, 23 Oct | the story's criteria, AGENTS.md, docs/schema.md, db/schema.sql, home.html, js/home.js, textbooks.html, js/textbooks.js, js/auth.js, js/client.js | telling it which columns NOT to send (status, edition_verified, syllabus_book_id) kept the edition check free for #47 |
 | #47 New listings are checked against the syllabus edition | Antigravity (Gemini Pro) | 1 conversation, about 1 request, 24 Oct | the story's criteria, AGENTS.md, docs/schema.md, db/schema.sql, db/changes/37-university-email.sql, sell.html, js/sell.js, js/client.js | pointing it to how profiles.role is protected made it lock edition_verified on UPDATE too, not only on INSERT |
+| #42 Admin retires a textbook at the end of a semester | Antigravity (Gemini Flash) | 1 conversation, about 1 request, 24 Oct | the story's criteria, AGENTS.md, docs/schema.md, db/schema.sql, db/changes/47-edition-check.sql, textbooks.html, js/textbooks.js, js/auth.js, js/client.js | building #47 first meant criterion 2 already worked — only the Retire button and the active list were needed |
+
 
 
 
