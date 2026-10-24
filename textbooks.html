@@ -5,6 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Textbooks | Campus Textbook Exchange</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    #textbooks-card {
+      max-width: 760px;
+    }
+    .textbooks-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.875rem;
+      margin-top: 0.5rem;
+    }
+    .textbooks-table th,
+    .textbooks-table td {
+      padding: 0.65rem 0.5rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    .textbooks-table th {
+      font-weight: 600;
+      color: var(--text-main);
+      background-color: var(--bg);
+    }
+    .btn-retire {
+      background-color: var(--error-bg);
+      color: var(--error-text);
+      border: 1px solid var(--error-border);
+      border-radius: 4px;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.15s ease;
+      white-space: nowrap;
+    }
+    .btn-retire:hover:not(:disabled) {
+      background-color: #fee2e2;
+    }
+    .btn-retire:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -110,6 +152,17 @@
 
         <div id="message" class="message" role="alert" aria-live="polite" hidden></div>
       </form>
+
+      <section aria-labelledby="active-textbooks-heading" style="margin-top: 2rem;">
+        <header style="margin-bottom: 1rem; border-top: 1px solid var(--border); padding-top: 1.5rem;">
+          <h2 id="active-textbooks-heading" class="card-title" style="font-size: 1.25rem; text-align: left; margin-bottom: 0.25rem;">Active textbooks</h2>
+          <p class="card-desc" style="text-align: left;">Textbooks currently approved for course syllabi.</p>
+        </header>
+
+        <div id="active-textbooks-container">
+          <p class="card-desc" style="text-align: center; margin-top: 1rem;">Loading active textbooks...</p>
+        </div>
+      </section>
     </section>
   </main>
 
