@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/style.css">
   <style>
     #my-listings-card {
-      max-width: 800px;
+      max-width: 860px;
     }
     .listings-table {
       width: 100%;
@@ -26,6 +26,47 @@
       font-weight: 600;
       color: var(--text-main);
       background-color: var(--bg);
+    }
+    .btn-action {
+      padding: 0.35rem 0.65rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.15s ease;
+      white-space: nowrap;
+    }
+    .btn-edit {
+      background-color: var(--accent-light);
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      margin-right: 0.35rem;
+    }
+    .btn-edit:hover:not(:disabled) {
+      background-color: #dbeafe;
+    }
+    .btn-withdraw {
+      background-color: var(--error-bg);
+      color: var(--error-text);
+      border: 1px solid var(--error-border);
+    }
+    .btn-withdraw:hover:not(:disabled) {
+      background-color: #fee2e2;
+    }
+    .btn-action:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    #edit-listing-form {
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      padding: 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background-color: var(--bg);
+    }
+    #edit-listing-form[hidden] {
+      display: none;
     }
   </style>
 </head>
@@ -51,6 +92,51 @@
       </header>
 
       <div id="message" class="message" role="alert" aria-live="polite" hidden></div>
+
+      <form id="edit-listing-form" hidden novalidate>
+        <h2 style="font-size: 1.15rem; font-weight: 700; color: var(--primary); margin-bottom: 1rem;">Edit Listing</h2>
+
+        <div class="form-group">
+          <label for="edit-condition">Condition</label>
+          <select
+            id="edit-condition"
+            name="condition"
+            required
+            style="width: 100%; padding: 0.75rem 0.875rem; font-size: 0.95rem; color: var(--text-main); background-color: #ffffff; border: 1px solid var(--border); border-radius: 6px; outline: none;"
+          >
+            <option value="like_new">Like new</option>
+            <option value="good">Good</option>
+            <option value="fair">Fair</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="edit-price-kwd">Price (KWD)</label>
+          <input
+            type="number"
+            id="edit-price-kwd"
+            name="price_kwd"
+            step="0.001"
+            min="0"
+            placeholder="e.g. 15.000"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="edit-notes">Notes</label>
+          <input
+            type="text"
+            id="edit-notes"
+            name="notes"
+            placeholder="e.g. Minor highlighting in chapter 2"
+          >
+        </div>
+
+        <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+          <button type="submit" id="edit-save-btn" class="btn-primary" style="width: auto; margin-top: 0; padding: 0.5rem 1.25rem; font-size: 0.875rem;">Save</button>
+          <button type="button" id="edit-cancel-btn" style="padding: 0.5rem 1.25rem; font-size: 0.875rem; font-weight: 600; color: var(--text-main); background-color: #ffffff; border: 1px solid var(--border); border-radius: 6px; cursor: pointer;">Cancel</button>
+        </div>
+      </form>
 
       <div id="my-listings-container">
         <p class="card-desc" style="text-align: center; margin-top: 1rem;">Loading listings...</p>
