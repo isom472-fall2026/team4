@@ -10,7 +10,7 @@ Every listing is checked against the edition the library has approved for the co
 
 - **Proposal page:** https://isom472-fall2026.github.io/team4/docs/
 - **Running system:** https://isom472-fall2026.github.io/team4/
-- **Board:** TODO: paste the link of the Team 4 Project board
+- **Board:** TODO: https://github.com/orgs/isom472-fall2026/projects/5
 
 ## Where do I go?
 
