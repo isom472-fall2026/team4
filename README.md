@@ -1,17 +1,16 @@
-# TODO: the system's name
+# Campus Textbook Exchange System
 
-**Client:** TODO: who the client is — the organisation and the person you deal with.
+**Client:** Kuwait University Library — Eng. Mohammed.
 
-TODO: what the system does, in two lines. Plain language, no jargon. Someone who has
-never met your client should understand what it is for after reading these two lines.
+Kuwait University students buy, sell and swap used textbooks with each other on campus.
+Every listing is checked against the edition the library has approved for the course, so nobody buys the wrong book.
 
-> **Next due: Wednesday 23 September — your proposal.**
-> Write it in `docs/proposal.md`, then publish it. Steps: [docs/how-we-work.md](docs/how-we-work.md#phase-1--the-proposal)
+> **Next due: Monday 26 October — Phase 3: the running system, the delivery note and the `phase-3` tag.**
 > Update this line at the start of every phase. It is the first thing your team sees.
 
-- **Proposal page:** TODO: link to the published page (`https://isom472-fall2026.github.io/team4/docs/`)
-- **Running system:** (https://isom472-fall2026.github.io/team4/)
-- **Board:** TODO: link to your Project board
+- **Proposal page:** https://isom472-fall2026.github.io/team4/docs/
+- **Running system:** https://isom472-fall2026.github.io/team4/
+- **Board:** TODO: paste the link of the Team 4 Project board
 
 ## Where do I go?
 
