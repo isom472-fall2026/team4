@@ -125,6 +125,23 @@ document.addEventListener('DOMContentLoaded', async () => {
         .insert(payload);
 
       if (error) {
+        if (error.message && error.message.includes('EDITION_MISMATCH')) {
+          const { data: approvedBooks } = await client
+            .from('syllabus_books')
+            .select('title, approved_edition, isbn')
+            .eq('course_code', courseCode)
+            .eq('is_active', true)
+            .order('syllabus_book_id', { ascending: false });
+
+          if (approvedBooks && approvedBooks.length > 0) {
+            const book = approvedBooks[0];
+            showMessage(`Not published: this ISBN is not the approved edition for ${courseCode}. The approved textbook is ${book.title}, ${book.approved_edition} (ISBN ${book.isbn}).`, 'error');
+          } else {
+            showMessage(`Not published: no approved textbook is registered for ${courseCode} yet.`, 'error');
+          }
+          return;
+        }
+
         const code = error.code ? String(error.code) : '';
         if (code === '23514' || (error.message && error.message.includes('23514'))) {
           showMessage('This listing breaks a rule: check the condition and the price.', 'error');
@@ -143,6 +160,23 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (priceInput) priceInput.value = '';
       if (notesInput) notesInput.value = '';
     } catch (err) {
+      if (err && err.message && err.message.includes('EDITION_MISMATCH')) {
+        const { data: approvedBooks } = await client
+          .from('syllabus_books')
+          .select('title, approved_edition, isbn')
+          .eq('course_code', courseCode)
+          .eq('is_active', true)
+          .order('syllabus_book_id', { ascending: false });
+
+        if (approvedBooks && approvedBooks.length > 0) {
+          const book = approvedBooks[0];
+          showMessage(`Not published: this ISBN is not the approved edition for ${courseCode}. The approved textbook is ${book.title}, ${book.approved_edition} (ISBN ${book.isbn}).`, 'error');
+        } else {
+          showMessage(`Not published: no approved textbook is registered for ${courseCode} yet.`, 'error');
+        }
+        return;
+      }
+
       const code = (err && err.code) ? String(err.code) : '';
       if (code === '23514' || (err.message && err.message.includes('23514'))) {
         showMessage('This listing breaks a rule: check the condition and the price.', 'error');
