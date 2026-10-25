@@ -51,11 +51,50 @@ the story ID, the title, who built it, and what happened to it.
 | #70 | Admin sees exchange activity numbers | Salem Alsabah | planned for Phase 6 |
 | #72 | Admin sees estimated student savings | Salem Alsabah | planned for Phase 6 |
 
-## Phase 3 — saved 21 October
+## Phase 3 — saved 25 October
 
 | Story | Title | Who | State at the tag |
 |---|---|---|---|
-|  |  |  |  |
+| #37 | Sign up with a university email | Salem Alsabah (pair with Yousef Alfarhan) | done — PR #88, #89 |
+| #38 | Log in and log out | Salem Alsabah (pair with Abdullah Alrashidi) | done — PR #92 |
+| #39 | Library staff have an admin account | Abdullah Alrashidi | done — PR #94 |
+| #40 | Admin adds a course | Abdullah Alrashidi | done — PR #96 |
+| #41 | Admin adds the approved textbook for a course | Abdullah Alhouli (pair with Hamad Behbehani) | done — PR #98 |
+| #42 | Admin retires a textbook at the end of a semester | Abdullah Alhouli | done — PR #104 (criterion 3 changed by the Client Lead: Textbooks list instead of course page) |
+| #44 | Seller lists a used textbook | Hamad Behbehani | done — PR #100 |
+| #47 | New listings are checked against the syllabus edition | Hamad Behbehani | done — PR #102 |
+| #50 | Seller sees their own listings | Yousef Alfarhan (pair with Salem Alsabah) | done — PR #106 |
+| #54 | Seller edits or withdraws a listing | Yousef Alfarhan | done — PR #108 |
+| #56 | Buyer browses the catalog | Hamad Behbehani | planned for Phase 4 |
+| #58 | Buyer searches by course code | Hamad Behbehani | planned for Phase 4 |
+| #60 | Buyer filters by department | Abdullah Alrashidi | planned for Phase 4 |
+| #61 | Buyer searches by title or ISBN | Yousef Alfarhan | planned for Phase 4 |
+| #63 | Buyer opens a listing's detail page | Salem Alsabah | planned for Phase 4 |
+| #64 | Verified-edition badge on listings | Salem Alsabah | planned for Phase 4 |
+| #67 | Buyer filters by sell/swap and condition | Abdullah Alrashidi | planned for Phase 4 |
+| #69 | Buyer sorts by price or newest | Yousef Alfarhan | planned for Phase 4 |
+| #71 | Course page shows required books and copies available | Abdullah Alhouli | planned for Phase 4 |
+| #73 | Listings for a retired textbook are hidden | Abdullah Alhouli | planned for Phase 4 |
+| #74 | Admin manages campus handoff locations | Abdullah Alrashidi | planned for Phase 5 |
+| #75 | Buyer requests a book with a time and place | Yousef Alfarhan | planned for Phase 5 |
+| #76 | One open request per buyer per book | Yousef Alfarhan | planned for Phase 5 |
+| #77 | Seller sees incoming requests | Hamad Behbehani | planned for Phase 5 |
+| #45 | Seller accepts a request | Hamad Behbehani | planned for Phase 5 |
+| #46 | Seller declines a request | Abdullah Alhouli | planned for Phase 5 |
+| #48 | Buyer cancels a request | Abdullah Alhouli | planned for Phase 5 |
+| #49 | Buyer sees their requests | Salem Alsabah | planned for Phase 5 |
+| #51 | Seller confirms the handoff is done | Salem Alsabah | planned for Phase 5 |
+| #52 | Upcoming handoffs list | Abdullah Alrashidi | planned for Phase 5 |
+| #53 | Student reports a listing | Abdullah Alhouli | planned for Phase 6 |
+| #55 | Admin moderation dashboard | Abdullah Alrashidi | planned for Phase 6 |
+| #57 | Admin sees open reports first | Abdullah Alhouli | planned for Phase 6 |
+| #59 | Admin removes a listing with a reason | Abdullah Alrashidi | planned for Phase 6 |
+| #62 | Admin restores a removed listing | Hamad Behbehani | planned for Phase 6 |
+| #65 | Admin resolves a report | Hamad Behbehani | planned for Phase 6 |
+| #66 | Admin sees the moderation log | Yousef Alfarhan | planned for Phase 6 |
+| #68 | Seller sees why a listing was removed | Yousef Alfarhan | planned for Phase 6 |
+| #70 | Admin sees exchange activity numbers | Salem Alsabah | planned for Phase 6 |
+| #72 | Admin sees estimated student savings | Salem Alsabah | planned for Phase 6 |
 
 ## Phase 4 — saved 4 November
 
