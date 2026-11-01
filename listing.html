@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listing Details | Campus Textbook Exchange</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    #listing-card {
+      max-width: 640px;
+    }
+    .listing-details {
+      margin-top: 1.5rem;
+    }
+    .book-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.25rem;
+      line-height: 1.3;
+    }
+    .book-author {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+    .detail-list {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      row-gap: 0.85rem;
+      column-gap: 1rem;
+      font-size: 0.95rem;
+      margin-top: 1.25rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1.25rem;
+    }
+    .detail-label {
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .detail-value {
+      color: var(--text-main);
+      word-break: break-word;
+    }
+    .catalog-link-container {
+      margin-top: 2rem;
+      text-align: center;
+    }
+    .catalog-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .catalog-link:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 480px) {
+      .detail-list {
+        grid-template-columns: 1fr;
+        row-gap: 0.35rem;
+      }
+      .detail-label {
+        margin-top: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-container">
+      <div>
+        <div class="brand-title">Kuwait University</div>
+        <div class="brand-sub">Campus Textbook Exchange</div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <a href="home.html" style="color: #ffffff; text-decoration: none; font-weight: 600; font-size: 0.875rem;">Home</a>
+        <button type="button" id="logout-btn" class="btn-primary" style="width: auto; margin-top: 0; padding: 0.5rem 1rem; font-size: 0.875rem;">Log out</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="card" aria-labelledby="listing-heading" id="listing-card">
+      <header class="card-header">
+        <h1 id="listing-heading" class="card-title">Listing Details</h1>
+        <p class="card-desc" id="listing-subtitle">Textbook listing information.</p>
+      </header>
+
+      <div id="message" class="message" role="alert" aria-live="polite" hidden></div>
+
+      <div id="listing-container">
+        <p class="card-desc" style="text-align: center; margin-top: 1rem;">Loading listing...</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; Kuwait University Campus Textbook Exchange &middot; ISOM 472</p>
+  </footer>
+
+  <!-- Supabase client and application scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/client.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/listing.js"></script>
+</body>
+</html>
