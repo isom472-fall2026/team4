@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses | Campus Textbook Exchange</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    #course-card {
+      max-width: 860px;
+    }
+    .books-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.875rem;
+      margin-top: 0.5rem;
+    }
+    .books-table th,
+    .books-table td {
+      padding: 0.65rem 0.5rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    .books-table th {
+      font-weight: 600;
+      color: var(--text-main);
+      background-color: var(--bg);
+    }
+    .course-info {
+      margin-top: 0.5rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .course-info-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+    }
+    .course-info-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .course-info-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .course-info-value {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+    .courses-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 0 0;
+    }
+    .courses-list li {
+      padding: 0.75rem 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .courses-list li:last-child {
+      border-bottom: none;
+    }
+    .courses-list a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .courses-list a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-container">
+      <div>
+        <div class="brand-title">Kuwait University</div>
+        <div class="brand-sub">Campus Textbook Exchange</div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <a href="home.html" style="color: #ffffff; text-decoration: none; font-weight: 600; font-size: 0.875rem;">Home</a>
+        <button type="button" id="logout-btn" class="btn-primary" style="width: auto; margin-top: 0; padding: 0.5rem 1rem; font-size: 0.875rem;">Log out</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="card" aria-labelledby="course-heading" id="course-card">
+      <header class="card-header">
+        <h1 id="course-heading" class="card-title">Courses</h1>
+        <p class="card-desc" id="course-desc">Course details and required textbooks.</p>
+      </header>
+
+      <div id="message" class="message" role="alert" aria-live="polite" hidden></div>
+
+      <div id="course-container">
+        <p class="card-desc" style="text-align: center; margin-top: 1rem;">Loading...</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; Kuwait University Campus Textbook Exchange &middot; ISOM 472</p>
+  </footer>
+
+  <!-- Supabase client and application scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/client.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/course.js"></script>
+</body>
+</html>
+
