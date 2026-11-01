@@ -5,12 +5,22 @@
 Kuwait University students buy, sell and swap used textbooks with each other on campus.
 Every listing is checked against the edition the library has approved for the course, so nobody buys the wrong book.
 
-> **Next due: Monday 26 October — Phase 3: the running system, the delivery note and the `phase-3` tag.**
+> **Next due: Monday 9 November — Phase 4: the buyer's catalog, search and course page.**
 > Update this line at the start of every phase. It is the first thing your team sees.
 
 - **Proposal page:** https://isom472-fall2026.github.io/team4/docs/
 - **Running system:** https://isom472-fall2026.github.io/team4/
 - **Board:**  https://github.com/orgs/isom472-fall2026/projects/5
+
+## Test accounts (for the instructor)
+
+All three are confirmed and work at the running system's address.
+
+| Persona | Email | Password | Role | Data already in place |
+|---|---|---|---|---|
+| Eng. Mohammed — library admin | admin.demo@ku.edu.kw | Demo2026! | admin | course ACC 101 with an approved textbook |
+| Fahad — student seller | seller.demo@ku.edu.kw | Demo2026! | student | one published ACC 101 listing |
+| Noura — student buyer | buyer.demo@ku.edu.kw | Demo2026! | student | no listings; use it to browse |
 
 ## Where do I go?
 
