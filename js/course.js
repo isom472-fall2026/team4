@@ -336,3 +336,4 @@ document.addEventListener('DOMContentLoaded', async () => {
     showMessage((err && err.message) || 'An unexpected error occurred while loading course details.', 'error');
   }
 });
+
