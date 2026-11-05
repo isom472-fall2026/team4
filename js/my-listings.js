@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       // Explicit filter by seller_id to ensure only the user's listings appear
       const { data: listings, error } = await client
         .from('listings')
-        .select('listing_id, course_code, isbn, condition, trade_type, price_kwd, notes, status, edition_verified, created_at')
+        .select('listing_id, course_code, isbn, condition, trade_type, price_kwd, notes, status, edition_verified, syllabus_book_id, created_at')
         .eq('seller_id', profile.id)
         .order('created_at', { ascending: false });
 
@@ -226,7 +226,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         tr.appendChild(tdStatus);
 
         const tdPublished = document.createElement('td');
-        tdPublished.textContent = listing.edition_verified ? 'Published' : 'Not published';
+        if (!listing.edition_verified && listing.syllabus_book_id != null && listing.syllabus_book_id !== '') {
+          tdPublished.textContent = 'No longer on the syllabus';
+        } else {
+          tdPublished.textContent = listing.edition_verified ? 'Published' : 'Not published';
+        }
         tr.appendChild(tdPublished);
 
         const tdActions = document.createElement('td');
