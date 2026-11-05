@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Textbook Catalog | Campus Textbook Exchange</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    #catalog-card {
+      max-width: 860px;
+    }
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .listing-card {
+      display: block;
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      text-decoration: none;
+      color: var(--text-main);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.05s ease;
+    }
+    .listing-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+    .listing-card-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+    }
+    .listing-card-details {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      font-size: 0.875rem;
+    }
+    .listing-field {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+    .listing-card-label {
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .listing-card-value {
+      color: var(--text-main);
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-container">
+      <div>
+        <div class="brand-title">Kuwait University</div>
+        <div class="brand-sub">Campus Textbook Exchange</div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <a href="home.html" style="color: #ffffff; text-decoration: none; font-weight: 600; font-size: 0.875rem;">Home</a>
+        <button type="button" id="logout-btn" class="btn-primary" style="width: auto; margin-top: 0; padding: 0.5rem 1rem; font-size: 0.875rem;">Log out</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="card" aria-labelledby="catalog-heading" id="catalog-card">
+      <header class="card-header">
+        <h1 id="catalog-heading" class="card-title">Textbook Catalog</h1>
+        <p class="card-desc">Browse available textbooks for your courses.</p>
+      </header>
+
+      <div id="message" class="message" role="alert" aria-live="polite" hidden></div>
+
+      <div id="catalog-container">
+        <p class="card-desc" style="text-align: center; margin-top: 1rem;">Loading catalog...</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; Kuwait University Campus Textbook Exchange &middot; ISOM 472</p>
+  </footer>
+
+  <!-- Supabase client and application scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/client.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/catalog.js"></script>
+</body>
+</html>
+
