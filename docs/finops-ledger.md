@@ -57,7 +57,7 @@ If the quota runs out: switch Pro → Flash with a narrower prompt; then a teamm
 | #63 Buyer opens a listing's detail page | Antigravity (Gemini Flash) | 1 conversation, about 1 request, 1 Nov | the story's criteria, AGENTS.md, docs/schema.md, db/schema.sql, my-listings.html, js/my-listings.js, js/auth.js, js/client.js | naming the profile_names view in the prompt kept the seller's email and student ID off the page |
 | #71 Course page shows required books and copies available | Antigravity (Gemini Flash) | 1 conversation, about 1 request, 1 Nov | the story's criteria, AGENTS.md, docs/schema.md, db/schema.sql, home.html, my-listings.html, js/my-listings.js, js/auth.js, js/client.js | giving it the exact count query kept the copies number correct; built by Yousef in place of Abdullah Alhouli (swap with #69) |
 | #56 Buyer browses the catalog | Antigravity (Gemini Flash) | 1 conversation, about 1 request, 5 Nov | the story's criteria, AGENTS.md, docs/schema.md, db/schema.sql, home.html, my-listings.html, js/my-listings.js, listing.html, js/listing.js, js/auth.js, js/client.js | asking for two functions, loadCatalog(filters) and renderCatalog(rows), leaves room for the five search and filter stories; built by Yousef in place of Hamad (swap with #61) |
-
+| #58 Buyer searches by course code | Antigravity (Gemini Flash) | 1 conversation, about 1 request, 5 Nov | the story's criteria, AGENTS.md, docs/schema.md, catalog.html, js/catalog.js | telling it to change only loadCatalog and leave renderCatalog alone let #64 be built at the same time without a conflict |
 ## Phase 5
 
 | Story | Assistant used | What it used (tokens, requests, or your own estimate) | What we gave it (files, story, schema) | What we would do differently |
