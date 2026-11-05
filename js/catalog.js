@@ -130,12 +130,17 @@ async function loadCatalog(filters = {}) {
   clearMessage();
 
   try {
-    const { data: listings, error } = await client
+    let query = client
       .from('listings')
       .select('listing_id, course_code, isbn, condition, trade_type, price_kwd, created_at, syllabus_books(title, semester)')
       .eq('status', 'available')
-      .eq('edition_verified', true)
-      .order('created_at', { ascending: false });
+      .eq('edition_verified', true);
+
+    if (filters && filters.course_code) {
+      query = query.eq('course_code', filters.course_code);
+    }
+
+    const { data: listings, error } = await query.order('created_at', { ascending: false });
 
     if (error) {
       if (container) container.textContent = '';
@@ -168,6 +173,16 @@ document.addEventListener('DOMContentLoaded', async () => {
   const logoutBtn = document.getElementById('logout-btn');
   if (logoutBtn) {
     logoutBtn.addEventListener('click', handleLogout);
+  }
+
+  const searchForm = document.getElementById('search-form');
+  const courseCodeInput = document.getElementById('course-code-input');
+  if (searchForm) {
+    searchForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const value = courseCodeInput ? courseCodeInput.value.trim().toUpperCase() : '';
+      loadCatalog({ course_code: value });
+    });
   }
 
   await loadCatalog({});
