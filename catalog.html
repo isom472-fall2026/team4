@@ -9,6 +9,33 @@
     #catalog-card {
       max-width: 860px;
     }
+    .search-form {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-end;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .search-form .form-group {
+      margin-bottom: 0;
+      flex: 1;
+      min-width: 200px;
+    }
+    .search-form .btn-primary {
+      width: auto;
+      margin-top: 0;
+      padding: 0.75rem 1.5rem;
+    }
+    @media (max-width: 480px) {
+      .search-form {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .search-form .btn-primary {
+        width: 100%;
+      }
+    }
     .catalog-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -81,6 +108,19 @@
       </header>
 
       <div id="message" class="message" role="alert" aria-live="polite" hidden></div>
+
+      <form id="search-form" class="search-form">
+        <div class="form-group">
+          <label for="course-code-input">Course code</label>
+          <input
+            type="text"
+            id="course-code-input"
+            name="course_code"
+            placeholder="ACC 101"
+          >
+        </div>
+        <button type="submit" id="search-btn" class="btn-primary">Search</button>
+      </form>
 
       <div id="catalog-container">
         <p class="card-desc" style="text-align: center; margin-top: 1rem;">Loading catalog...</p>
