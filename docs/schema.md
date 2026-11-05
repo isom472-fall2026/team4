@@ -116,6 +116,7 @@ Visitors who are not logged in (`anon`) can read and change nothing.
 - A `profiles` row is created automatically when someone signs up.
 - Sign up is restricted to university email addresses (@ku.edu.kw and subdomains).
 - New listings are checked against the active syllabus edition on insert; edition_verified and syllabus_book_id cannot be changed by students on update.
+- When `syllabus_books.is_active` becomes false, a trigger sets `edition_verified = false` on its available listings.
 
 ## Rules each story will add when it is built
 
@@ -123,6 +124,5 @@ The schema gives the tables and permissions. The following logic belongs to the 
 
 | Story | Logic to add |
 |---|---|
-| Listings for a retired textbook are hidden | When `syllabus_books.is_active` becomes false, set `edition_verified = false` on its available listings |
 | Seller accepts a request · Buyer cancels a request · Seller confirms the handoff is done | Keep `listings.status` in step with `exchange_requests.status` (a buyer cancelling an accepted request needs a function, because the buyer cannot update the seller's listing directly) |
 | Admin removes a listing with a reason | Cancel open requests when a listing is removed |
