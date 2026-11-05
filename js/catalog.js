@@ -172,3 +172,4 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   await loadCatalog({});
 });
+
