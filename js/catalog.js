@@ -55,6 +55,13 @@ function renderCatalog(rows) {
       titleEl.textContent = title;
       card.appendChild(titleEl);
 
+      if (listing.edition_verified !== false && book && book.semester && String(book.semester).trim()) {
+        const badge = document.createElement('span');
+        badge.className = 'verified-badge';
+        badge.textContent = 'Verified for ' + book.semester;
+        card.appendChild(badge);
+      }
+
       const detailsEl = document.createElement('div');
       detailsEl.className = 'listing-card-details';
 

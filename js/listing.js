@@ -165,6 +165,14 @@ document.addEventListener('DOMContentLoaded', async () => {
       authorEl.textContent = author;
       detailsWrapper.appendChild(authorEl);
 
+      if (listing.edition_verified === true && book && book.semester && String(book.semester).trim()) {
+        const badge = document.createElement('span');
+        badge.id = 'listing-verified-badge';
+        badge.className = 'verified-badge';
+        badge.textContent = 'Verified for ' + book.semester;
+        detailsWrapper.appendChild(badge);
+      }
+
       const dl = document.createElement('dl');
       dl.className = 'detail-list';
 
