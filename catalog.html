@@ -145,6 +145,29 @@
             <option value="">All departments</option>
           </select>
         </div>
+        <div class="form-group">
+          <label for="trade-type-select">Trade type</label>
+          <select id="trade-type-select">
+            <option value="">Any</option>
+            <option value="sell">Sell</option>
+            <option value="swap">Swap</option>
+            <option value="either">Either</option>
+          </select>
+        </div>
+        <div class="form-group" role="group" aria-labelledby="condition-label">
+          <label id="condition-label">Condition</label>
+          <div style="display: flex; gap: 0.75rem; align-items: center; min-height: 42px;">
+            <label style="display: inline-flex; align-items: center; gap: 0.25rem; font-weight: normal; margin-bottom: 0; cursor: pointer;">
+              <input type="checkbox" id="condition-like-new" name="condition" value="like_new" style="width: auto;"> Like new
+            </label>
+            <label style="display: inline-flex; align-items: center; gap: 0.25rem; font-weight: normal; margin-bottom: 0; cursor: pointer;">
+              <input type="checkbox" id="condition-good" name="condition" value="good" style="width: auto;"> Good
+            </label>
+            <label style="display: inline-flex; align-items: center; gap: 0.25rem; font-weight: normal; margin-bottom: 0; cursor: pointer;">
+              <input type="checkbox" id="condition-fair" name="condition" value="fair" style="width: auto;"> Fair
+            </label>
+          </div>
+        </div>
         <button type="submit" id="search-btn" class="btn-primary">Search</button>
       </form>
 

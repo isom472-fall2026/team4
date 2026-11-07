@@ -14,7 +14,7 @@ function clearMessage() {
   messageEl.hidden = true;
 }
 
-function renderCatalog(rows, emptyText) {
+function renderCatalog(rows, emptyText, showClearLink) {
   const container = document.getElementById('catalog-container');
   if (!container) return;
 
@@ -34,6 +34,16 @@ function renderCatalog(rows, emptyText) {
       emptyMsg.style.marginTop = '1rem';
       emptyMsg.textContent = emptyText || 'No books listed yet.';
       container.appendChild(emptyMsg);
+
+      if (showClearLink) {
+        const clearLink = document.createElement('a');
+        clearLink.href = 'catalog.html';
+        clearLink.textContent = 'Clear filters';
+        clearLink.style.display = 'block';
+        clearLink.style.textAlign = 'center';
+        clearLink.style.marginTop = '0.5rem';
+        container.appendChild(clearLink);
+      }
       return;
     }
 
@@ -128,10 +138,14 @@ function readFilters() {
   const courseCodeInput = document.getElementById('course-code-input');
   const titleIsbnInput = document.getElementById('title-isbn-input');
   const departmentSelect = document.getElementById('department-select');
+  const tradeTypeSelect = document.getElementById('trade-type-select');
+  const conditionChecked = document.querySelectorAll('input[name="condition"]:checked');
 
   const course_code = courseCodeInput ? courseCodeInput.value.trim().toUpperCase() : '';
   const titleIsbnValue = titleIsbnInput ? titleIsbnInput.value.trim() : '';
   const department = departmentSelect ? departmentSelect.value : '';
+  const trade_type = tradeTypeSelect ? tradeTypeSelect.value : '';
+  const conditions = Array.from(conditionChecked).map((box) => box.value);
 
   let title = '';
   let isbn = '';
@@ -147,7 +161,7 @@ function readFilters() {
     title = titleIsbnValue;
   }
 
-  return { course_code, title, isbn, department };
+  return { course_code, title, isbn, department, trade_type, conditions };
 }
 
 async function loadDepartments() {
@@ -218,6 +232,14 @@ async function loadCatalog(filters = {}) {
       query = query.eq('isbn', filters.isbn);
     }
 
+    if (filters && filters.trade_type) {
+      query = query.eq('trade_type', filters.trade_type);
+    }
+
+    if (filters && filters.conditions && filters.conditions.length > 0) {
+      query = query.in('condition', filters.conditions);
+    }
+
     const { data: listings, error } = await query.order('created_at', { ascending: false });
 
     if (error) {
@@ -226,11 +248,17 @@ async function loadCatalog(filters = {}) {
       return;
     }
 
-    const emptyText = (filters && filters.department)
-      ? 'No books listed yet for this department.'
-      : undefined;
+    let emptyText;
+    let showClearLink = false;
 
-    renderCatalog(listings || [], emptyText);
+    if (filters && (filters.trade_type || (filters.conditions && filters.conditions.length > 0))) {
+      emptyText = 'No books match these filters.';
+      showClearLink = true;
+    } else if (filters && filters.department) {
+      emptyText = 'No books listed yet for this department.';
+    }
+
+    renderCatalog(listings || [], emptyText, showClearLink);
   } catch (err) {
     if (container) container.textContent = '';
     showMessage((err && err.message) || 'An unexpected error occurred while loading the catalog.', 'error');
