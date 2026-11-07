@@ -119,7 +119,7 @@ function renderCatalog(rows, emptyText, showClearLink) {
       const priceVal = document.createElement('span');
       priceVal.className = 'listing-card-value';
       const hasPrice = listing.price_kwd !== null && listing.price_kwd !== undefined && listing.price_kwd !== '';
-      priceVal.textContent = hasPrice ? String(listing.price_kwd) : '—';
+      priceVal.textContent = hasPrice ? String(listing.price_kwd) : 'Swap';
       priceRow.appendChild(priceLabel);
       priceRow.appendChild(priceVal);
       detailsEl.appendChild(priceRow);
@@ -140,12 +140,14 @@ function readFilters() {
   const departmentSelect = document.getElementById('department-select');
   const tradeTypeSelect = document.getElementById('trade-type-select');
   const conditionChecked = document.querySelectorAll('input[name="condition"]:checked');
+  const sortSelect = document.getElementById('sort-select');
 
   const course_code = courseCodeInput ? courseCodeInput.value.trim().toUpperCase() : '';
   const titleIsbnValue = titleIsbnInput ? titleIsbnInput.value.trim() : '';
   const department = departmentSelect ? departmentSelect.value : '';
   const trade_type = tradeTypeSelect ? tradeTypeSelect.value : '';
   const conditions = Array.from(conditionChecked).map((box) => box.value);
+  const sort = sortSelect ? sortSelect.value : 'newest';
 
   let title = '';
   let isbn = '';
@@ -161,7 +163,7 @@ function readFilters() {
     title = titleIsbnValue;
   }
 
-  return { course_code, title, isbn, department, trade_type, conditions };
+  return { course_code, title, isbn, department, trade_type, conditions, sort };
 }
 
 async function loadDepartments() {
@@ -240,7 +242,15 @@ async function loadCatalog(filters = {}) {
       query = query.in('condition', filters.conditions);
     }
 
-    const { data: listings, error } = await query.order('created_at', { ascending: false });
+    if (filters && filters.sort === 'price') {
+      query = query
+        .order('price_kwd', { ascending: true, nullsFirst: false })
+        .order('created_at', { ascending: false });
+    } else {
+      query = query.order('created_at', { ascending: false });
+    }
+
+    const { data: listings, error } = await query;
 
     if (error) {
       if (container) container.textContent = '';
@@ -296,11 +306,18 @@ document.addEventListener('DOMContentLoaded', async () => {
         showMessage(filters.error, 'error');
         return;
       }
+      history.replaceState(null, '', '?sort=' + encodeURIComponent(filters.sort));
       loadCatalog(filters);
     });
   }
 
+  const sortParam = new URLSearchParams(location.search).get('sort');
+  const sortSelect = document.getElementById('sort-select');
+  if (sortSelect) {
+    sortSelect.value = sortParam === 'price' ? 'price' : 'newest';
+  }
+
   await loadDepartments();
-  await loadCatalog({});
+  await loadCatalog(readFilters());
 });
 
