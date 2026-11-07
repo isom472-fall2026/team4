@@ -124,6 +124,30 @@ function renderCatalog(rows) {
   }
 }
 
+function readFilters() {
+  const courseCodeInput = document.getElementById('course-code-input');
+  const titleIsbnInput = document.getElementById('title-isbn-input');
+
+  const course_code = courseCodeInput ? courseCodeInput.value.trim().toUpperCase() : '';
+  const titleIsbnValue = titleIsbnInput ? titleIsbnInput.value.trim() : '';
+
+  let title = '';
+  let isbn = '';
+
+  const cleaned = titleIsbnValue.replace(/[\s-]/g, '');
+  if (cleaned.length > 0 && /^\d+$/.test(cleaned)) {
+    if (cleaned.length === 10 || cleaned.length === 13) {
+      isbn = cleaned;
+    } else {
+      return { error: 'The ISBN must be 10 or 13 digits.' };
+    }
+  } else {
+    title = titleIsbnValue;
+  }
+
+  return { course_code, title, isbn };
+}
+
 async function loadCatalog(filters = {}) {
   const container = document.getElementById('catalog-container');
   const client = window.supabaseClient || window.supabase;
@@ -137,14 +161,26 @@ async function loadCatalog(filters = {}) {
   clearMessage();
 
   try {
+    const selectClause = (filters && filters.title)
+      ? 'listing_id, course_code, isbn, condition, trade_type, price_kwd, created_at, syllabus_books!inner(title, semester)'
+      : 'listing_id, course_code, isbn, condition, trade_type, price_kwd, created_at, syllabus_books(title, semester)';
+
     let query = client
       .from('listings')
-      .select('listing_id, course_code, isbn, condition, trade_type, price_kwd, created_at, syllabus_books(title, semester)')
+      .select(selectClause)
       .eq('status', 'available')
       .eq('edition_verified', true);
 
     if (filters && filters.course_code) {
       query = query.eq('course_code', filters.course_code);
+    }
+
+    if (filters && filters.title) {
+      query = query.ilike('syllabus_books.title', '%' + filters.title + '%');
+    }
+
+    if (filters && filters.isbn) {
+      query = query.eq('isbn', filters.isbn);
     }
 
     const { data: listings, error } = await query.order('created_at', { ascending: false });
@@ -164,6 +200,7 @@ async function loadCatalog(filters = {}) {
 
 window.loadCatalog = loadCatalog;
 window.renderCatalog = renderCatalog;
+window.readFilters = readFilters;
 
 document.addEventListener('DOMContentLoaded', async () => {
   const profile = await requireAuth();
@@ -183,12 +220,15 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   const searchForm = document.getElementById('search-form');
-  const courseCodeInput = document.getElementById('course-code-input');
   if (searchForm) {
     searchForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const value = courseCodeInput ? courseCodeInput.value.trim().toUpperCase() : '';
-      loadCatalog({ course_code: value });
+      const filters = readFilters();
+      if (filters.error) {
+        showMessage(filters.error, 'error');
+        return;
+      }
+      loadCatalog(filters);
     });
   }
 
