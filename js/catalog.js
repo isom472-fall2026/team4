@@ -14,7 +14,7 @@ function clearMessage() {
   messageEl.hidden = true;
 }
 
-function renderCatalog(rows) {
+function renderCatalog(rows, emptyText) {
   const container = document.getElementById('catalog-container');
   if (!container) return;
 
@@ -32,7 +32,7 @@ function renderCatalog(rows) {
       emptyMsg.className = 'card-desc';
       emptyMsg.style.textAlign = 'center';
       emptyMsg.style.marginTop = '1rem';
-      emptyMsg.textContent = 'No books listed yet.';
+      emptyMsg.textContent = emptyText || 'No books listed yet.';
       container.appendChild(emptyMsg);
       return;
     }
@@ -127,9 +127,11 @@ function renderCatalog(rows) {
 function readFilters() {
   const courseCodeInput = document.getElementById('course-code-input');
   const titleIsbnInput = document.getElementById('title-isbn-input');
+  const departmentSelect = document.getElementById('department-select');
 
   const course_code = courseCodeInput ? courseCodeInput.value.trim().toUpperCase() : '';
   const titleIsbnValue = titleIsbnInput ? titleIsbnInput.value.trim() : '';
+  const department = departmentSelect ? departmentSelect.value : '';
 
   let title = '';
   let isbn = '';
@@ -145,7 +147,32 @@ function readFilters() {
     title = titleIsbnValue;
   }
 
-  return { course_code, title, isbn };
+  return { course_code, title, isbn, department };
+}
+
+async function loadDepartments() {
+  const deptSelect = document.getElementById('department-select');
+  if (!deptSelect) return;
+
+  const client = window.supabaseClient || window.supabase;
+  if (!client) return;
+
+  const { data: courses, error } = await client
+    .from('courses')
+    .select('department');
+
+  if (error || !courses) return;
+
+  const departments = Array.from(
+    new Set(courses.map((c) => c.department).filter(Boolean))
+  ).sort((a, b) => a.localeCompare(b));
+
+  departments.forEach((dept) => {
+    const opt = document.createElement('option');
+    opt.value = dept;
+    opt.textContent = dept;
+    deptSelect.appendChild(opt);
+  });
 }
 
 async function loadCatalog(filters = {}) {
@@ -161,15 +188,23 @@ async function loadCatalog(filters = {}) {
   clearMessage();
 
   try {
-    const selectClause = (filters && filters.title)
+    let selectClause = (filters && filters.title)
       ? 'listing_id, course_code, isbn, condition, trade_type, price_kwd, created_at, syllabus_books!inner(title, semester)'
       : 'listing_id, course_code, isbn, condition, trade_type, price_kwd, created_at, syllabus_books(title, semester)';
+
+    if (filters && filters.department) {
+      selectClause += ', courses!inner(department)';
+    }
 
     let query = client
       .from('listings')
       .select(selectClause)
       .eq('status', 'available')
       .eq('edition_verified', true);
+
+    if (filters && filters.department) {
+      query = query.eq('courses.department', filters.department);
+    }
 
     if (filters && filters.course_code) {
       query = query.eq('course_code', filters.course_code);
@@ -191,7 +226,11 @@ async function loadCatalog(filters = {}) {
       return;
     }
 
-    renderCatalog(listings || []);
+    const emptyText = (filters && filters.department)
+      ? 'No books listed yet for this department.'
+      : undefined;
+
+    renderCatalog(listings || [], emptyText);
   } catch (err) {
     if (container) container.textContent = '';
     showMessage((err && err.message) || 'An unexpected error occurred while loading the catalog.', 'error');
@@ -199,6 +238,7 @@ async function loadCatalog(filters = {}) {
 }
 
 window.loadCatalog = loadCatalog;
+window.loadDepartments = loadDepartments;
 window.renderCatalog = renderCatalog;
 window.readFilters = readFilters;
 
@@ -232,6 +272,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   }
 
+  await loadDepartments();
   await loadCatalog({});
 });
 
