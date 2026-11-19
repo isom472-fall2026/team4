@@ -69,7 +69,7 @@ If the quota runs out: switch Pro → Flash with a narrower prompt; then a teamm
 
 | Story | Assistant used | What it used (tokens, requests, or your own estimate) | What we gave it (files, story, schema) | What we would do differently |
 |---|---|---|---|---|
-|  |  |  |  |  |
+| #74 Admin manages campus handoff locations | Antigravity (Gemini Flash) | 1 conversation, about 1 request, 19 Nov | the story's criteria, AGENTS.md, docs/schema.md, courses.html, js/courses.js, admin.html | asking for "each message once, only in #message" avoided the double message the instructor found in Phase 4; built by the Client Lead, so Hamad accepted it |
 
 ## Phase 6
 
