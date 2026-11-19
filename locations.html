@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Handoff locations | Campus Textbook Exchange</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    #locations-card {
+      max-width: 640px;
+    }
+    .locations-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.875rem;
+      margin-top: 1rem;
+    }
+    .locations-table th,
+    .locations-table td {
+      padding: 0.65rem 0.5rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    .locations-table th {
+      font-weight: 600;
+      color: var(--text-main);
+      background-color: var(--bg);
+    }
+    .btn-deactivate {
+      background-color: var(--error-bg);
+      color: var(--error-text);
+      border: 1px solid var(--error-border);
+      border-radius: 4px;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.15s ease;
+      white-space: nowrap;
+    }
+    .btn-deactivate:hover:not(:disabled) {
+      background-color: #fee2e2;
+    }
+    .btn-deactivate:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-container">
+      <div>
+        <div class="brand-title">Kuwait University</div>
+        <div class="brand-sub">Campus Textbook Exchange</div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <a href="home.html" style="color: #ffffff; text-decoration: none; font-weight: 600; font-size: 0.875rem;">Home</a>
+        <button type="button" id="logout-btn" class="btn-primary" style="width: auto; margin-top: 0; padding: 0.5rem 1rem; font-size: 0.875rem;">Log out</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="card" aria-labelledby="locations-heading" id="locations-card" hidden>
+      <header class="card-header">
+        <h1 id="locations-heading" class="card-title">Handoff locations</h1>
+        <p class="card-desc">Enter details to add a campus handoff location.</p>
+      </header>
+
+      <form id="location-form" novalidate>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            placeholder="e.g. Starbucks Seating Area"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="building">Building</label>
+          <input
+            type="text"
+            id="building"
+            name="building"
+            required
+            placeholder="e.g. College of Business Administration"
+          >
+        </div>
+
+        <button type="submit" id="save-btn" class="btn-primary">Save</button>
+
+        <div id="message" class="message" role="alert" aria-live="polite" hidden></div>
+      </form>
+
+      <div id="locations-container" style="margin-top: 1.5rem;"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; Kuwait University Campus Textbook Exchange &middot; ISOM 472</p>
+  </footer>
+
+  <!-- Supabase client and application scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/client.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/locations.js"></script>
+</body>
+</html>
