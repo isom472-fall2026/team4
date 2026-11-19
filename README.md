@@ -65,7 +65,7 @@ cuts the tag.
 | 2 — design sprint | Yousef Alfarhan | Wed 7 Oct |
 | 3 — sprint 1 | Salem Alsabah | Wed 21 Oct |
 | 4 — sprint 2 | Abdullah Alhouli | Wed 4 Nov |
-| 5 — sprint 3 | Abdullah Alrashidi | Wed 18 Nov |
+| 5 — sprint 3 | Abdullah Alrashidi | Wed 23 Nov |
 | 6 — final sprint | Hamad Behbehani | Wed 9 Dec |
 
 ## What is in this repository
