@@ -70,6 +70,7 @@ If the quota runs out: switch Pro → Flash with a narrower prompt; then a teamm
 | Story | Assistant used | What it used (tokens, requests, or your own estimate) | What we gave it (files, story, schema) | What we would do differently |
 |---|---|---|---|---|
 | #74 Admin manages campus handoff locations | Antigravity (Gemini Flash) | 1 conversation, about 1 request, 19 Nov | the story's criteria, AGENTS.md, docs/schema.md, courses.html, js/courses.js, admin.html | asking for "each message once, only in #message" avoided the double message the instructor found in Phase 4; built by the Client Lead, so Hamad accepted it |
+| #77 Seller sees incoming requests | Antigravity (Gemini Flash) | 1 conversation, about 1 request, 19 Nov | the story's criteria, AGENTS.md, docs/schema.md, db/schema.sql, my-listings.html, js/my-listings.js, home.html | naming the seller filter (listings.seller_id) and the profile_names view in the prompt kept other sellers' requests and buyers' emails off the page; the first commit message was "update story" and was corrected with --amend before the pull request |
 
 ## Phase 6
 
