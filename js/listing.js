@@ -278,6 +278,24 @@ document.addEventListener('DOMContentLoaded', async () => {
         requestBtn.disabled = true;
 
         try {
+          const { data: existingRequests, error: checkError } = await client
+            .from('exchange_requests')
+            .select('request_id')
+            .eq('listing_id', listing.listing_id)
+            .eq('buyer_id', profile.id)
+            .in('status', ['requested', 'accepted'])
+            .limit(1);
+
+          if (checkError) {
+            showMessage(checkError.message, 'error');
+            return;
+          }
+
+          if (existingRequests && existingRequests.length > 0) {
+            showMessage('You already requested this book.', 'error');
+            return;
+          }
+
           const { error: insertError } = await client
             .from('exchange_requests')
             .insert({
@@ -289,7 +307,11 @@ document.addEventListener('DOMContentLoaded', async () => {
             });
 
           if (insertError) {
-            showMessage(insertError.message, 'error');
+            if (insertError.code === '23505') {
+              showMessage('You already requested this book.', 'error');
+            } else {
+              showMessage(insertError.message, 'error');
+            }
             return;
           }
 
