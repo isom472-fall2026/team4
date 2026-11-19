@@ -117,6 +117,7 @@ Visitors who are not logged in (`anon`) can read and change nothing.
 - Sign up is restricted to university email addresses (@ku.edu.kw and subdomains).
 - New listings are checked against the active syllabus edition on insert; edition_verified and syllabus_book_id cannot be changed by students on update.
 - When `syllabus_books.is_active` becomes false, a trigger sets `edition_verified = false` on its available listings.
+- Request status changes are checked by a trigger (seller: requested → accepted/declined, accepted → completed; buyer: requested/accepted → cancelled), which also keeps listings.status in step (reserved, available, exchanged) and declines the other requests when one is accepted.
 
 ## Rules each story will add when it is built
 
@@ -124,5 +125,4 @@ The schema gives the tables and permissions. The following logic belongs to the 
 
 | Story | Logic to add |
 |---|---|
-| Seller accepts a request · Buyer cancels a request · Seller confirms the handoff is done | Keep `listings.status` in step with `exchange_requests.status` (a buyer cancelling an accepted request needs a function, because the buyer cannot update the seller's listing directly) |
 | Admin removes a listing with a reason | Cancel open requests when a listing is removed |
