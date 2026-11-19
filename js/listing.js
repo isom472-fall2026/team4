@@ -47,8 +47,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const container = document.getElementById('listing-container');
   const client = window.supabaseClient || window.supabase;
+  const requestSection = document.getElementById('request-section');
 
   function showErrorState(text) {
+    if (requestSection) {
+      requestSection.hidden = true;
+    }
     showMessage(text, 'error');
     if (container) {
       container.textContent = '';
@@ -214,6 +218,91 @@ document.addEventListener('DOMContentLoaded', async () => {
       detailsWrapper.appendChild(linkContainer);
 
       container.appendChild(detailsWrapper);
+    }
+
+    if (listing.seller_id === profile.id) {
+      if (requestSection) {
+        requestSection.hidden = true;
+      }
+      return;
+    }
+
+    if (requestSection) {
+      requestSection.hidden = false;
+    }
+
+    const locationSelect = document.getElementById('location-select');
+    const proposedTimeInput = document.getElementById('proposed-time');
+    const requestMessageInput = document.getElementById('request-message');
+    const requestBtn = document.getElementById('request-btn');
+
+    if (locationSelect) {
+      const { data: locations, error: locError } = await client
+        .from('campus_locations')
+        .select('location_id, name, building')
+        .eq('is_active', true)
+        .order('name', { ascending: true });
+
+      if (!locError && locations) {
+        locationSelect.innerHTML = '<option value="">Choose a place</option>';
+        locations.forEach((loc) => {
+          const opt = document.createElement('option');
+          opt.value = loc.location_id;
+          opt.textContent = loc.building ? `${loc.name} — ${loc.building}` : loc.name;
+          locationSelect.appendChild(opt);
+        });
+      }
+    }
+
+    if (requestBtn) {
+      requestBtn.addEventListener('click', async () => {
+        clearMessage();
+
+        const placeValue = locationSelect ? locationSelect.value : '';
+        const timeValue = proposedTimeInput ? proposedTimeInput.value : '';
+
+        if (!placeValue || !timeValue) {
+          showMessage('Choose a place and a time.', 'error');
+          return;
+        }
+
+        const when = new Date(timeValue);
+        if (isNaN(when.getTime()) || when <= new Date()) {
+          showMessage('Choose a time in the future.', 'error');
+          return;
+        }
+
+        const trimmed = requestMessageInput ? requestMessageInput.value.trim() : '';
+        const message = trimmed.length > 0 ? trimmed : null;
+
+        requestBtn.disabled = true;
+
+        try {
+          const { error: insertError } = await client
+            .from('exchange_requests')
+            .insert({
+              listing_id: listing.listing_id,
+              buyer_id: profile.id,
+              location_id: Number(placeValue),
+              proposed_time: when.toISOString(),
+              message: message
+            });
+
+          if (insertError) {
+            showMessage(insertError.message, 'error');
+            return;
+          }
+
+          showMessage('Request sent.', 'success');
+          if (locationSelect) locationSelect.value = '';
+          if (proposedTimeInput) proposedTimeInput.value = '';
+          if (requestMessageInput) requestMessageInput.value = '';
+        } catch (err) {
+          showMessage(err && err.message ? err.message : 'Failed to send request.', 'error');
+        } finally {
+          requestBtn.disabled = false;
+        }
+      });
     }
   } catch (err) {
     showErrorState(err && err.message ? err.message : 'An error occurred loading the listing.');

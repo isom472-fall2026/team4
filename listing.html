@@ -104,6 +104,25 @@
       <div id="listing-container">
         <p class="card-desc" style="text-align: center; margin-top: 1rem;">Loading listing...</p>
       </div>
+
+      <section id="request-section" hidden>
+        <h2 style="font-size: 1.25rem; font-weight: 700; color: var(--primary); margin: 1.5rem 0 1rem; border-top: 1px solid var(--border); padding-top: 1.25rem;">Request this book</h2>
+        <div class="form-group">
+          <label for="location-select">Place</label>
+          <select id="location-select" style="width: 100%; padding: 0.75rem 0.875rem; font-size: 0.95rem; color: var(--text-main); background-color: #ffffff; border: 1px solid var(--border); border-radius: 6px; outline: none;">
+            <option value="">Choose a place</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="proposed-time">Time</label>
+          <input type="datetime-local" id="proposed-time">
+        </div>
+        <div class="form-group">
+          <label for="request-message">Message <span class="form-hint" style="display: inline;">(optional)</span></label>
+          <textarea id="request-message" rows="3" style="width: 100%; padding: 0.75rem 0.875rem; font-size: 0.95rem; color: var(--text-main); background-color: #ffffff; border: 1px solid var(--border); border-radius: 6px; outline: none; font-family: inherit; resize: vertical;"></textarea>
+        </div>
+        <button type="button" id="request-btn" class="btn-primary">Request</button>
+      </section>
     </section>
   </main>
 
