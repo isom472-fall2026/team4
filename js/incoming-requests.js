@@ -213,6 +213,33 @@ document.addEventListener('DOMContentLoaded', async () => {
           });
           tdActions.appendChild(document.createTextNode(' '));
           tdActions.appendChild(declineBtn);
+        } else if (req.status === 'accepted') {
+          const doneBtn = document.createElement('button');
+          doneBtn.type = 'button';
+          doneBtn.className = 'btn-done';
+          doneBtn.textContent = 'Mark as done';
+          doneBtn.addEventListener('click', async () => {
+            doneBtn.disabled = true;
+            try {
+              const { data, error } = await client
+                .from('exchange_requests')
+                .update({ status: 'completed' })
+                .eq('request_id', req.request_id)
+                .eq('status', 'accepted')
+                .select('request_id');
+
+              if (error || !data || data.length === 0) {
+                showMessage('Only an accepted request can be marked as done.', 'error');
+              } else {
+                showMessage('Handoff marked as done.', 'success');
+              }
+              await loadRequests(true);
+            } catch (err) {
+              showMessage('Only an accepted request can be marked as done.', 'error');
+              await loadRequests(true);
+            }
+          });
+          tdActions.appendChild(doneBtn);
         } else {
           tdActions.textContent = '';
         }
