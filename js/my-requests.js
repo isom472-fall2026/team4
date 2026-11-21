@@ -38,122 +38,158 @@ document.addEventListener('DOMContentLoaded', async () => {
     return;
   }
 
-  try {
-    const { data: requests, error } = await client
-      .from('exchange_requests')
-      .select('request_id, status, proposed_time, created_at, campus_locations(name), listings(listing_id, status, course_code, syllabus_books(title))')
-      .eq('buyer_id', profile.id)
-      .order('created_at', { ascending: false });
-
-    if (error) {
-      if (container) container.innerHTML = '';
-      showMessage(error.message || 'Failed to load requests.', 'error');
-      return;
-    }
-
-    if (!container) return;
-    container.innerHTML = '';
-
-    if (!requests || requests.length === 0) {
+  async function loadRequests(preserveMessage = false) {
+    if (!preserveMessage) {
       clearMessage();
-      const emptyMsg = document.createElement('p');
-      emptyMsg.className = 'card-desc';
-      emptyMsg.style.textAlign = 'center';
-      emptyMsg.style.marginTop = '1rem';
-
-      const textNode = document.createTextNode('You have not requested any books yet. ');
-      emptyMsg.appendChild(textNode);
-
-      const catalogLink = document.createElement('a');
-      catalogLink.href = 'catalog.html';
-      catalogLink.textContent = 'Browse textbooks';
-      catalogLink.style.color = 'var(--accent)';
-      catalogLink.style.fontWeight = '600';
-      catalogLink.style.textDecoration = 'none';
-      emptyMsg.appendChild(catalogLink);
-
-      container.appendChild(emptyMsg);
-      return;
     }
 
-    clearMessage();
+    try {
+      const { data: requests, error } = await client
+        .from('exchange_requests')
+        .select('request_id, status, proposed_time, created_at, campus_locations(name), listings(listing_id, status, course_code, syllabus_books(title))')
+        .eq('buyer_id', profile.id)
+        .order('created_at', { ascending: false });
 
-    const tableWrapper = document.createElement('div');
-    tableWrapper.style.overflowX = 'auto';
-
-    const table = document.createElement('table');
-    table.className = 'requests-table';
-
-    const thead = document.createElement('thead');
-    const headerRow = document.createElement('tr');
-    ['Book', 'Proposed time', 'Place', 'Status', 'Actions'].forEach((headingText) => {
-      const th = document.createElement('th');
-      th.textContent = headingText;
-      headerRow.appendChild(th);
-    });
-    thead.appendChild(headerRow);
-    table.appendChild(thead);
-
-    const tbody = document.createElement('tbody');
-    tbody.id = 'my-requests-body';
-
-    requests.forEach((req) => {
-      const tr = document.createElement('tr');
-      tr.setAttribute('data-request-id', req.request_id);
-
-      const listing = Array.isArray(req.listings) ? req.listings[0] : req.listings;
-      const syllabusBook = listing && listing.syllabus_books
-        ? (Array.isArray(listing.syllabus_books) ? listing.syllabus_books[0] : listing.syllabus_books)
-        : null;
-      const title = syllabusBook && syllabusBook.title ? syllabusBook.title : '';
-      const courseCode = listing && listing.course_code ? listing.course_code : '';
-
-      let bookDisplay = '—';
-      if (!listing || listing.status === 'removed') {
-        bookDisplay = 'Listing removed';
-      } else if (title && courseCode) {
-        bookDisplay = `${title} (${courseCode})`;
-      } else if (title) {
-        bookDisplay = title;
-      } else if (courseCode) {
-        bookDisplay = courseCode;
+      if (error) {
+        if (container) container.innerHTML = '';
+        showMessage(error.message || 'Failed to load requests.', 'error');
+        return;
       }
 
-      const tdBook = document.createElement('td');
-      tdBook.textContent = bookDisplay;
-      tr.appendChild(tdBook);
+      if (!container) return;
+      container.innerHTML = '';
 
-      const tdTime = document.createElement('td');
-      if (req.proposed_time) {
-        const d = new Date(req.proposed_time);
-        tdTime.textContent = isNaN(d.getTime()) ? '—' : d.toLocaleString();
-      } else {
-        tdTime.textContent = '—';
+      if (!requests || requests.length === 0) {
+        if (!preserveMessage) clearMessage();
+        const emptyMsg = document.createElement('p');
+        emptyMsg.className = 'card-desc';
+        emptyMsg.style.textAlign = 'center';
+        emptyMsg.style.marginTop = '1rem';
+
+        const textNode = document.createTextNode('You have not requested any books yet. ');
+        emptyMsg.appendChild(textNode);
+
+        const catalogLink = document.createElement('a');
+        catalogLink.href = 'catalog.html';
+        catalogLink.textContent = 'Browse textbooks';
+        catalogLink.style.color = 'var(--accent)';
+        catalogLink.style.fontWeight = '600';
+        catalogLink.style.textDecoration = 'none';
+        emptyMsg.appendChild(catalogLink);
+
+        container.appendChild(emptyMsg);
+        return;
       }
-      tr.appendChild(tdTime);
 
-      const tdPlace = document.createElement('td');
-      const loc = Array.isArray(req.campus_locations) ? req.campus_locations[0] : req.campus_locations;
-      tdPlace.textContent = (loc && loc.name) ? loc.name : '—';
-      tr.appendChild(tdPlace);
+      if (!preserveMessage) clearMessage();
 
-      const tdStatus = document.createElement('td');
-      tdStatus.textContent = req.status || '—';
-      tr.appendChild(tdStatus);
+      const tableWrapper = document.createElement('div');
+      tableWrapper.style.overflowX = 'auto';
 
-      const tdActions = document.createElement('td');
-      tdActions.textContent = '';
-      tr.appendChild(tdActions);
+      const table = document.createElement('table');
+      table.className = 'requests-table';
 
-      tbody.appendChild(tr);
-    });
+      const thead = document.createElement('thead');
+      const headerRow = document.createElement('tr');
+      ['Book', 'Proposed time', 'Place', 'Status', 'Actions'].forEach((headingText) => {
+        const th = document.createElement('th');
+        th.textContent = headingText;
+        headerRow.appendChild(th);
+      });
+      thead.appendChild(headerRow);
+      table.appendChild(thead);
 
-    table.appendChild(tbody);
-    tableWrapper.appendChild(table);
-    container.appendChild(tableWrapper);
-  } catch (err) {
-    if (container) container.innerHTML = '';
-    showMessage(err.message || 'An unexpected error occurred while loading requests.', 'error');
+      const tbody = document.createElement('tbody');
+      tbody.id = 'my-requests-body';
+
+      requests.forEach((req) => {
+        const tr = document.createElement('tr');
+        tr.setAttribute('data-request-id', req.request_id);
+
+        const listing = Array.isArray(req.listings) ? req.listings[0] : req.listings;
+        const syllabusBook = listing && listing.syllabus_books
+          ? (Array.isArray(listing.syllabus_books) ? listing.syllabus_books[0] : listing.syllabus_books)
+          : null;
+        const title = syllabusBook && syllabusBook.title ? syllabusBook.title : '';
+        const courseCode = listing && listing.course_code ? listing.course_code : '';
+
+        let bookDisplay = '—';
+        if (!listing || listing.status === 'removed') {
+          bookDisplay = 'Listing removed';
+        } else if (title && courseCode) {
+          bookDisplay = `${title} (${courseCode})`;
+        } else if (title) {
+          bookDisplay = title;
+        } else if (courseCode) {
+          bookDisplay = courseCode;
+        }
+
+        const tdBook = document.createElement('td');
+        tdBook.textContent = bookDisplay;
+        tr.appendChild(tdBook);
+
+        const tdTime = document.createElement('td');
+        if (req.proposed_time) {
+          const d = new Date(req.proposed_time);
+          tdTime.textContent = isNaN(d.getTime()) ? '—' : d.toLocaleString();
+        } else {
+          tdTime.textContent = '—';
+        }
+        tr.appendChild(tdTime);
+
+        const tdPlace = document.createElement('td');
+        const loc = Array.isArray(req.campus_locations) ? req.campus_locations[0] : req.campus_locations;
+        tdPlace.textContent = (loc && loc.name) ? loc.name : '—';
+        tr.appendChild(tdPlace);
+
+        const tdStatus = document.createElement('td');
+        tdStatus.textContent = req.status || '—';
+        tr.appendChild(tdStatus);
+
+        const tdActions = document.createElement('td');
+        if (req.status === 'requested' || req.status === 'accepted') {
+          const cancelBtn = document.createElement('button');
+          cancelBtn.type = 'button';
+          cancelBtn.textContent = 'Cancel';
+          cancelBtn.addEventListener('click', async () => {
+            cancelBtn.disabled = true;
+            try {
+              const { data, error: updateError } = await client
+                .from('exchange_requests')
+                .update({ status: 'cancelled' })
+                .eq('request_id', req.request_id)
+                .in('status', ['requested', 'accepted'])
+                .select('request_id');
+
+              if (updateError || !data || data.length === 0) {
+                showMessage('This request can no longer be cancelled.', 'error');
+              } else {
+                showMessage('Request cancelled.', 'success');
+              }
+              await loadRequests(true);
+            } catch (err) {
+              showMessage('This request can no longer be cancelled.', 'error');
+              await loadRequests(true);
+            }
+          });
+          tdActions.appendChild(cancelBtn);
+        } else {
+          tdActions.textContent = '';
+        }
+        tr.appendChild(tdActions);
+
+        tbody.appendChild(tr);
+      });
+
+      table.appendChild(tbody);
+      tableWrapper.appendChild(table);
+      container.appendChild(tableWrapper);
+    } catch (err) {
+      if (container) container.innerHTML = '';
+      showMessage(err.message || 'An unexpected error occurred while loading requests.', 'error');
+    }
   }
+
+  await loadRequests();
 });
 
