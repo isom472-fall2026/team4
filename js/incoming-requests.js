@@ -185,6 +185,34 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
           });
           tdActions.appendChild(acceptBtn);
+
+          const declineBtn = document.createElement('button');
+          declineBtn.type = 'button';
+          declineBtn.className = 'btn-decline';
+          declineBtn.textContent = 'Decline';
+          declineBtn.addEventListener('click', async () => {
+            declineBtn.disabled = true;
+            try {
+              const { data, error } = await client
+                .from('exchange_requests')
+                .update({ status: 'declined' })
+                .eq('request_id', req.request_id)
+                .eq('status', 'requested')
+                .select('request_id');
+
+              if (error || !data || data.length === 0) {
+                showMessage('This request can no longer be declined.', 'error');
+              } else {
+                showMessage('Request declined.', 'success');
+              }
+              await loadRequests(true);
+            } catch (err) {
+              showMessage('This request can no longer be declined.', 'error');
+              await loadRequests(true);
+            }
+          });
+          tdActions.appendChild(document.createTextNode(' '));
+          tdActions.appendChild(declineBtn);
         } else {
           tdActions.textContent = '';
         }
