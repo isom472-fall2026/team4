@@ -5,7 +5,7 @@
 Kuwait University students buy, sell and swap used textbooks with each other on campus.
 Every listing is checked against the edition the library has approved for the course, so nobody buys the wrong book.
 
-> **Next due: Monday 9 November — Phase 4: the buyer's catalog, search and course page.**
+> **Next due: Monday 23 November — Phase 5: requests and handoffs.**
 > Update this line at the start of every phase. It is the first thing your team sees.
 
 - **Proposal page:** https://isom472-fall2026.github.io/team4/docs/
@@ -18,10 +18,9 @@ All three are confirmed and work at the running system's address.
 
 | Persona | Email | Password | Role | Data already in place |
 |---|---|---|---|---|
-| Eng. Mohammed — library admin | admin.demo@ku.edu.kw | Demo2026! | admin | course ACC 101 with an approved textbook |
-| Fahad — student seller | seller.demo@ku.edu.kw | Demo2026! | student | one published ACC 101 listing |
-| Noura — student buyer | buyer.demo@ku.edu.kw | Demo2026! | student | no listings; use it to browse |
-
+| Eng. Mohammed — library admin | admin.demo@ku.edu.kw | Demo2026! | admin | courses ECON 101, ISOM 101 and MKT 101, each with an approved textbook; two active campus handoff locations |
+| Fahad — student seller | seller.demo@ku.edu.kw | Demo2026! | student | published ECON 101 (sell) and MKT 101 (swap) listings |
+| Noura — student buyer | buyer.demo@ku.edu.kw | Demo2026! | student | no requests yet; use it to browse, search and request a book |
 ## Where do I go?
 
 | I need to… | Go to |
@@ -65,7 +64,7 @@ cuts the tag.
 | 2 — design sprint | Yousef Alfarhan | Wed 7 Oct |
 | 3 — sprint 1 | Salem Alsabah | Wed 21 Oct |
 | 4 — sprint 2 | Abdullah Alhouli | Wed 4 Nov |
-| 5 — sprint 3 | Abdullah Alrashidi | Wed 23 Nov |
+| 5 — sprint 3 | Abdullah Alrashidi | Mon 23 Nov |
 | 6 — final sprint | Hamad Behbehani | Wed 9 Dec |
 
 ## What is in this repository
