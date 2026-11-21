@@ -57,13 +57,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (container) {
       container.textContent = '';
 
-      const p = document.createElement('p');
-      p.textContent = text;
-      p.className = 'card-desc';
-      p.style.textAlign = 'center';
-      p.style.marginTop = '1rem';
-      container.appendChild(p);
-
       const linkContainer = document.createElement('div');
       linkContainer.className = 'catalog-link-container';
       linkContainer.style.textAlign = 'center';

@@ -125,15 +125,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!course) {
       if (container) container.textContent = '';
       showMessage('Course not found.', 'error');
-      const notFoundMsg = document.createElement('p');
-      notFoundMsg.className = 'card-desc';
-      notFoundMsg.style.textAlign = 'center';
-      notFoundMsg.style.marginTop = '1rem';
-      notFoundMsg.id = 'course-not-found';
-      notFoundMsg.textContent = 'Course not found.';
       if (container) {
-        container.appendChild(notFoundMsg);
-
         const backContainer = document.createElement('div');
         backContainer.style.textAlign = 'center';
         backContainer.style.marginTop = '1.5rem';
